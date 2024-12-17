@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Card Form</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Container for the form */
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .form-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+
+        /* Form Elements */
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-container input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-container h1 {
+                font-size: 20px;
+            }
+        }
+
+        /* Optional decorative section */
+        .info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form Container -->
+    <div class="form-container">
+        <h1>Login</h1>
+        <form id="userForm">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required />
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required />
+            </div>
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellat pariatur magni aliquid quis in quam et? 
+            Beatae nam magnam architecto cupiditate odio suscipit at aperiam, consequatur, officiis, dicta rem!
+        </p>
+    </div>
+
+    <!-- Include js-cookie library -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+
+    <script>
+      // Select the form
+      const form = document.getElementById("userForm");
+
+      // Add submit event listener
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // Prevent the default form submission
+
+        // Collect form data
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Define API endpoint
+        const apiUrl = "https://smartpaycard.in/checkBackendLogin"; // Replace with your actual backend URL
+
+        try {
+          // Send login data to the backend
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password })
+          });
+
+          // Parse the response
+          const result = await response.json();
+
+          if (response.ok) {
+            // If login is successful, save the token
+            const token = result.token; // Assuming the API sends back a token
+            const expiryDate = new Date(new Date().getTime() + 3 * 60 * 60 * 1000); // Token expiry set to 3 hours
+            Cookies.set("authToken", token, { expires: expiryDate });
+
+            // Redirect the user to the dashboard
+            window.location.href = "/admin"; // Redirect to the desired route (e.g., dashboard)
+          } else {
+            // Handle failed login
+            alert("Error: " + result.message || "Something went wrong");
+          }
+        } catch (error) {
+          // Handle network or other errors
+          alert("Network error: " + error.message);
+        }
+      });
+    </script>
+
+</body>
+</html>

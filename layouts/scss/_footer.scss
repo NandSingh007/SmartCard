@@ -1,0 +1,106 @@
+/* Footer Home pages */
+.footer_area{ 
+    display: block;
+    overflow: hidden;
+	background: $hover; 
+    padding-top: 120px;
+	padding-bottom: 40px;
+    .footer_inner{  
+        .footer_logo{ 
+			margin-bottom: 50px;
+            img{
+                max-width: 100%;
+            }
+            p{
+                font: 400 16px/30px $nun;
+                color: #fff; 
+				padding: 40px 0 50px; 
+				a{
+					color: #fff;
+					&:hover, &:focus{
+						color: $bc; 
+					}
+				}
+            } 
+			.footer_social{
+				li{
+					display: inline-block;
+					transform: rotate(45deg);
+					background: #fca742;
+					margin-right: 37px;
+					@include transition;
+					&:last-child{
+						margin: 0;
+					}
+					a{
+						height: 47px;
+						width: 47px; 
+						text-align: center;
+						color: #fff; 
+						display: block;
+						font: normal normal normal 18px/47px FontAwesome;
+						transform: rotate(-45deg);
+					}
+					&:hover, &:focus{
+						background: $bc;
+						a{
+							color: #fff;
+						}
+					}
+				}
+			}
+        }
+        .footer_widget{ 
+			padding-left: 40px;
+			padding-bottom: 50px;
+            h4{
+                font: 700 18px/1 $nun;
+                color: #fff;
+                padding-bottom: 35px;
+				text-transform: uppercase;
+				padding-top: 7px;
+            } 
+            .footer_nav{
+                li{ 
+                    a{
+                        font: 600 18px/40px $nun;
+                        color: #ffd9ac;
+                        &:hover, &:focus{
+                            color: #fff; 
+                        }
+                    }
+                }
+            } 
+        } 
+    } 
+}
+.fa_2{
+	background: #252d3a;
+	.footer_inner {
+		.footer_logo {
+			.footer_social li{
+				background: #3a424f;
+			}
+		}
+		.footer_widget .footer_nav li a{
+			color: #919295;
+		}
+	}
+}
+/* End Footer Home pages */
+.scroll-top{
+    position: fixed;
+    right: 30px;
+    bottom: 15px; 
+    height: 50px;
+    width: 50px; 
+    cursor: pointer;
+    background: $bc;
+    border: 0;
+    box-shadow: none;
+    z-index: 999;
+    color: #fff;
+    &:hover, &:focus{
+        background: #ce8506;
+    }  
+}

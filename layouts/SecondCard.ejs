@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Card</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <h3 class="flex items-center justify-center my-5 mb-4 text-4xl font-bold text-center">
+        <img src="/images/star.png" width="40px" alt="Star Icon" class="mr-2"> 
+        Final Step 
+        <img src="/images/star.png" width="40px" alt="Star Icon" class="ml-2">
+      </h3>
+  <!-- Credit Card -->
+  <div class="relative text-white rounded-lg w-[90vw] max-w-[600px] h-[50vw] max-h-[400px] overflow-hidden">
+    <!-- Card Background Image -->
+    <img src="/images/card_gold.webp" alt="Credit Card Background" class="absolute inset-0 object-cover w-full h-full">
+
+    <!-- Card Content -->
+    <div class="absolute inset-0 flex flex-col justify-center px-6 py-4 sm:px-8 sm:py-8">
+   
+      <!-- Card Details -->
+      <div class="text-left">
+        <!-- Card Number -->
+        <p class="font-mono text-[8vw] sm:text-[4vw] md:text-[3vw] lg:text-[2.5vw] tracking-widest" id="cardNumber">1234 5678 9012 3456</p>
+
+        <!-- Card Holder and Valid Thru -->
+        <div class="flex justify-between mt-6 text-xs sm:text-base">
+          <div>
+            <p class="uppercase">Card Holder</p>
+            <p class="font-semibold" id="cardName">Your Name</p>
+          </div>
+          <div>
+            <p class="uppercase">Valid Thru</p>
+            <p class="font-semibold" id="cardDate">MM/YY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Additional Section Below -->
+   <div class="w-[90vw] max-w-[600px] mt-8 p-6 rounded-lg shadow-lg bg-white">
+    <!-- Section Title -->
+    <h3 class="flex items-center justify-center mb-4 text-4xl font-bold text-center">
+        <img src="/images/star.png" width="40px" alt="Star Icon" class="mr-2"> 
+        Congratulations 
+        <img src="/images/star.png" width="40px" alt="Star Icon" class="ml-2">
+      </h3>
+    <p class="mb-4 text-lg text-center text-gray-700">
+      Your card is activated
+    </p>
+    <p class="text-base text-center text-gray-600">
+      Hello Shubham, for using your card limit please make your credit card insurance with the following package and enjoy your limit.
+    </p>
+  
+    <!-- Swiper Slider -->
+    <div class="mt-6 swiper">
+      <div class="swiper-wrapper">
+        <!-- Slider Item Template -->
+        <div class="p-6 bg-gray-100 rounded-lg shadow-md swiper-slide">
+          <div class="flex flex-col items-center">
+            <i class="mb-2 text-4xl text-blue-500 fas fa-landmark"></i>
+            <p class="text-lg font-bold text-black">HDFC Bank</p>
+            <p class="mb-2 text-sm text-gray-700" id="bank-price-hdfc">₹1500 /-</p>
+            <button
+              onclick="openModal('HDFC Bank', '₹1500')"
+              class="px-4 py-2 text-white rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-lg"
+            >
+              Activate
+            </button>
+          </div>
+        </div>
+  
+        <div class="p-6 bg-gray-100 rounded-lg shadow-md swiper-slide">
+          <div class="flex flex-col items-center">
+            <i class="mb-2 text-4xl text-green-500 fas fa-university"></i>
+            <p class="text-lg font-bold text-black">ICICI Bank</p>
+            <p class="mb-2 text-sm text-gray-700" id="bank-price-icici">₹2000 /-</p>
+            <button
+              onclick="openModal('ICICI Bank', '₹2000')"
+              class="px-4 py-2 text-white rounded-lg bg-gradient-to-r from-green-400 to-blue-400 hover:shadow-lg"
+            >
+              Activate
+            </button>
+          </div>
+        </div>
+  
+        <div class="p-6 bg-gray-100 rounded-lg shadow-md swiper-slide">
+          <div class="flex flex-col items-center">
+            <i class="mb-2 text-4xl text-yellow-500 fas fa-piggy-bank"></i>
+            <p class="text-lg font-bold text-black">SBI Bank</p>
+            <p class="mb-2 text-sm text-gray-700" id="bank-price-sbi">₹2500 /-</p>
+            <button
+              onclick="openModal('SBI Bank', '₹2500')"
+              class="px-4 py-2 text-white rounded-lg bg-gradient-to-r from-yellow-400 to-orange-400 hover:shadow-lg"
+            >
+              Activate
+            </button>
+          </div>
+        </div>
+
+      </div>
+  
+      <!-- Swiper Navigation Buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+  
+      <!-- Swiper Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="py-4 font-semibold text-red-600">T&C-If your insurance amount is not done in 6 hours of card activation your card will be in pending mode</div>
+  </div>
+  
+<!-- Modal -->
+<div
+  id="modal"
+  class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-70"
+>
+  <div
+    class="relative w-[90%] max-w-[500px] bg-gradient-to-br from-white to-gray-100 p-8 rounded-xl shadow-2xl transform scale-95 transition-transform duration-300 ease-in-out"
+  >
+    <!-- Close Button -->
+    <button
+      onclick="closeModal()"
+      class="absolute text-2xl text-gray-500 top-3 right-3 hover:text-red-500 focus:outline-none"
+    >
+      ✕
+    </button>
+    
+    <!-- Modal Content -->
+    <h3
+      class="mb-4 text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500"
+      id="modal-bank-name"
+    >
+      Bank Name
+    </h3>
+    <p class="mb-6 text-xl text-center text-gray-700" id="modal-bank-price">
+      Price
+    </p>
+    <div class="flex justify-center mb-6">
+      <img
+        src="https://via.placeholder.com/200x200"
+        alt="QR Code"
+        class="rounded-lg shadow-lg"
+      />
+    </div>
+    <p class="text-center text-gray-600">
+      Scan the QR code to make the payment and unlock your credit card benefits.
+    </p>
+
+    <!-- CTA Button -->
+    <div class="mt-6 text-center">
+      <button
+        onclick="closeModal()"
+        class="px-6 py-3 text-lg font-semibold text-white transition-all duration-300 transform rounded-lg bg-gradient-to-r from-green-400 to-blue-500 hover:scale-105 hover:shadow-xl"
+      >
+        Confirm & Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+  function openModal(bankName, bankPrice) {
+    document.getElementById("modal-bank-name").textContent = bankName;
+    document.getElementById("modal-bank-price").textContent = bankPrice;
+    const modal = document.getElementById("modal");
+    modal.classList.remove("hidden");
+    modal.querySelector(".relative").classList.add("scale-100");
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.querySelector(".relative").classList.remove("scale-100");
+    setTimeout(() => modal.classList.add("hidden"), 300);
+  }
+</script>
+
+  <!-- Swiper.js Script -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+  
+  
+</body>
+</html>

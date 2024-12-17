@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Card</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+
+  <!-- Thank You Section (Full Width, Professional) -->
+  <div class="w-full px-6 py-10 sm:px-16">
+    <div class="flex flex-col items-center space-y-6 text-center">
+      <h3 class="flex items-center justify-center mb-4 text-3xl font-bold text-center">
+        <img src="/images/star.png" width="40px" alt="Star Icon" class="mr-2"> 
+        Thank You for Submitting
+        <img src="/images/star.png" width="40px" alt="Star Icon" class="ml-2">
+      </h3>
+      <p class="max-w-3xl text-lg font-medium sm:text-xl lg:text-xl">
+        Congratulations sir! Your activation charges and insurance payment are updated. Your card CVV code is generated and your card is ready for use after GST formalities. Our sales manager will call you soon for further discussion. Your physical card will dispatch tomorrow. The company will send you the tracking ID of your card. Your card will be delivered within a maximum of one week.
+      </p>
+      <p class="font-semibold text-yellow-700 text-md sm:text-lg">Thank You!</p>
+      <!-- Button to Trigger Modal -->
+      <button onclick="openModal()" class="px-6 py-3 mt-6 text-lg font-semibold text-white transition-colors bg-yellow-500 rounded-md shadow-lg hover:bg-yellow-600">
+        View Insurance Details
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Section -->
+  <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-50">
+    <div class="w-11/12 p-8 bg-white rounded-lg shadow-lg sm:w-3/4 lg:w-1/2">
+      <div class="mb-6 text-center">
+        <h2 class="flex items-center justify-center text-2xl font-semibold text-red-600">
+            <i class="mr-3 fas fa-file-invoice"></i> <!-- Font Awesome Icon -->
+            Insurance Policy Certificate
+          </h2>
+      </div>
+      <table class="w-full border border-separate border-gray-300 rounded-md table-auto border-spacing-0">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="px-4 py-3 text-lg text-red-600 border-b">Bank Name</th>
+            <th class="px-4 py-3 text-lg text-red-600 border-b">Customer Name</th>
+            <th class="px-4 py-3 text-lg text-red-600 border-b">Policy Name</th>
+            <th class="px-4 py-3 text-lg text-red-600 border-b">Card Number</th>
+            <th class="px-4 py-3 text-lg text-red-600 border-b">Customer ID</th>
+            <th class="px-4 py-3 text-lg text-red-600 border-b">Period of Insurance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-2 text-center border-b">ABC Bank</td>
+            <td class="px-4 py-2 text-center border-b">John Doe</td>
+            <td class="px-4 py-2 text-center border-b">Life Insurance</td>
+            <td class="px-4 py-2 text-center border-b">1234 5678 9012 3456</td>
+            <td class="px-4 py-2 text-center border-b">123456</td>
+            <td class="px-4 py-2 text-center border-b">2024-2026</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mt-6 text-center">
+        <p class="text-lg font-semibold">
+          Benefits: In case of any incident where you are unable to repay, the insurance company will repay your due amount, and you will receive your CVV Number.
+        </p>
+        <button onclick="closeModal()" class="px-6 py-3 mt-6 text-lg font-semibold text-white transition-colors bg-red-500 rounded-md shadow-lg hover:bg-red-600">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Credit Card Section -->
+  <div class="relative mt-6 text-white rounded-lg w-[89vw] max-w-[526px] h-[47vw] max-h-[350px] overflow-hidden">
+    <!-- Card Background Image -->
+    <img src="/images/card_gold.webp" alt="Credit Card Background" class="absolute inset-0 object-cover w-full h-full">
+
+    <!-- Card Content -->
+    <div class="absolute inset-0 flex flex-col justify-center px-6 py-4 sm:px-8 sm:py-8">
+      <!-- Card Details -->
+      <div class="text-left">
+        <!-- Card Number -->
+        <p class="font-mono text-[8vw] sm:text-[4vw] md:text-[3vw] lg:text-[2.5vw] tracking-widest" id="cardNumber">1234 5678 9012 3456</p>
+
+        <!-- Card Holder and Valid Thru -->
+        <div class="flex justify-between mt-6 text-xs sm:text-base">
+          <div>
+            <p class="uppercase">Card Holder</p>
+            <p class="font-semibold" id="cardName">Your Name</p>
+          </div>
+          <div>
+            <p class="uppercase">Valid Thru</p>
+            <p class="font-semibold" id="cardDate">MM/YY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Script -->
+  <script>
+    function openModal() {
+      document.getElementById('modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

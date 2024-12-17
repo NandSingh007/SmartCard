@@ -1,0 +1,279 @@
+// Achieve_financial_area
+.achieve_financial_area{
+    display: block;
+    overflow: hidden;
+    padding: 110px 0 120px;
+    .achieve_inner{
+        padding-top: 65px;
+        p{
+            font-size: 18px;
+            line-height: 30px;
+            max-width: 840px;
+            float: left;
+            color: rgba(0, 0, 0, 0.8);
+        }
+        .theme_btn{
+            float: right;
+            background: $hover;
+            text-transform: uppercase;
+            min-width: 233px;
+            line-height: 55px;
+            &:before{
+                background: $bc;
+            }
+        }
+        .personal_tittle{
+            padding-bottom: 120px;
+        }
+    }
+    .achieve{
+        margin-bottom: 30px;
+        background: #ffffff;
+        box-shadow: 0px 0px 35px 0px rgba(221, 221, 221, 0.52);
+        display: block;
+        overflow: hidden;
+        padding: 30px;
+        padding-bottom: 55px;
+        text-align: center;
+        .icon_img{
+            height: 92px;
+            img{
+                max-width: 100%;
+            }
+        }
+        a{
+            display: block;
+            font: 700 22px/1 $ssp;
+            color: #151515;
+            padding: 35px 0; 
+            &:hover, &:focus{
+                color: $bc;
+            }
+        }
+        p{
+            color: $pfont;
+            font: 400 16px/28px $ssp;
+        }
+    }
+}
+.afa_2{
+	.achieve_inner {
+		padding-top: 35px;
+		.personal_tittle{
+			p{
+				font: 600 34px/55px $nun;
+				color: $bc;
+				max-width: 830px;
+				span{
+					color: $hover;
+				}
+			}
+			.theme_btn{
+				margin-top: 25px;
+			}
+		}
+	}
+	.achieve{
+		@include transition;
+		border-radius: 0 0 40px 0;
+		&:hover, &:focus{
+			background: $bc;
+			a, p{
+				color: #fff;
+			}
+		}
+	}
+}
+// End Achieve_financial_area
+
+// potential_area
+.potential_area{
+    display: block;
+    overflow: hidden;
+    padding-top: 150px;
+    .tittle{
+        padding-bottom: 70px;
+        p{
+            font-size: 20px;
+            padding-top: 25px;
+        }
+    }
+    .potential{
+        margin-bottom: 30px;
+        .ptl_img{
+            display: block;
+            overflow: hidden;
+            img{
+                max-width: 100%;
+                @include transition; 
+            }
+        }
+        .ptl_containt{
+            box-shadow: 0px 0px 40px 0px rgba(233, 233, 233, 0.75);
+            text-align: center;
+            background: #ffffff;
+            padding: 40px 20px;
+            .heding{
+                font: 600 26px/36px $nun;
+                color: $hover;
+                &:hover, &:focus{
+                    color: $bc;
+                }
+            }
+            h6{
+                color: #5577b8;
+                font: 600 16px/1 $nun;
+                padding: 45px 0;
+                padding-top: 35px;
+            }
+            .theme_btn{
+                line-height: 45px;
+                min-width: 156px;
+            }
+        }
+        &:hover, &:focus{
+            .ptl_img img{
+                transform: scale3D(1.2, 1.2, 2);
+            }
+        }
+    }
+}
+.poa_2{
+	padding-top: 80px;
+	.potential .ptl_containt{
+		padding: 40px 27px;
+		border-radius: 0 0 40px 0;
+		.loan_img{
+			border-bottom: 1px solid #e1e2e4;
+			margin-bottom: 25px;
+			padding-bottom: 35px;
+			height: 125px;
+		}
+	} 
+	
+}
+.pa_3{
+	padding: 160px 0 130px;
+}
+// End potential_area
+
+//Application_process
+.application_process{
+	display: block;
+	overflow: hidden;
+	background: url("../images/apply-bg.jpg") no-repeat center fixed;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+	padding: 125px 0 90px;
+	&:after{
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		display: block;
+		z-index: -1;
+		background-color: rgba(39, 89, 171, 0.878);
+	}
+	.tittle{
+		padding-bottom: 75px;
+		span{
+			color: #fff;
+		}
+	}
+	.step_item{
+		background: #fff; 
+		padding: 40px 35px 40px 50px;
+		border-radius: 0 0 40px 0;
+		min-height: 368px;
+		position: relative;
+		margin-bottom: 30px;
+		h3{
+			font: 600 26px/1 $nun;
+			color: #505152;
+			padding-bottom: 30px;
+		}
+		p{
+			font: 600 20px/28px $nun;
+			color: $bc;
+			padding: 15px 0 45px;
+		}
+		.theme_btn{
+			line-height: 45px;
+			min-width: 156px;
+			position: absolute;
+			bottom: 40px;
+		}
+	}
+}
+//End Application_process
+
+//how_it_work
+.how_it_work{
+	display: block;
+	overflow: hidden;
+	padding: 130px 0;
+	.tittle{
+		padding-bottom: 85px;
+	}
+	.step_m{
+		padding: 90px;
+		padding-left: 40px;
+		background: $bc;
+		border-radius: 0 0 40px 0;
+		margin-bottom: 50px; 
+		.media-left{
+			width: 213px;
+			line-height: 213px;
+			background: #2b5eb2;
+			border-radius: 50%;
+			text-align: center;
+			display: block;
+			margin-top: 25px;
+		}
+		.media-body{
+			padding-left: 45px;
+			h3{
+				color: #fff;
+				font: 700 36px/1 $nun;
+				padding-bottom: 35px;
+			}
+			
+			h6{
+				font: 600 20px/28px $nun;
+				color: #fff;
+				padding-bottom: 50px;
+			}
+			p{
+				font-size: 18px;
+				font-family: $nun;
+				color: #ccdfff;
+			}
+		}
+	}
+	.sm_2{
+		background: #f3f3f3;
+		.media-body{
+			h3, h6{
+				color: $bc;
+			}
+			p{
+				color: $pfont;
+			}
+		}
+	}
+	.sm_3{
+		background: $hover;
+		.media-left{
+			background: #fd961e;
+		}
+		.media-body{ 
+			p{ 
+				color: rgba(255, 255, 255, 0.702);
+			}
+		}
+	}
+}
+//how_it_work

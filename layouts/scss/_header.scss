@@ -1,0 +1,397 @@
+/* Header Area */
+.header_top_area{ 
+    width: 100%; 
+    display: block;     
+    background: #efefef;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    .top_menu, .right_menu{   
+        li{
+            display: inline-block;
+            padding-left: 18px;
+            &:first-child{
+                padding-left: 0;
+            }
+            a{ 
+                color: #767575; 
+                font: 400 16px/60px $ssp;
+                &:hover, &:focus{ 
+                    color: $bc;
+                }  
+            } 
+            .number{ 
+                font: 600 24px/60px $nun;
+                color: $bc;
+                display: flex;
+                padding-right: 30px;
+                small{
+                    text-transform: uppercase; 
+                    color: #767575; 
+                    font: 400 16px/60px $ssp;  
+                    padding-right: 18px;
+                } 
+            }
+        }
+    }
+    .right_menu{ 
+        .right_nav{
+            float: right;  
+            li{ 
+                padding-left: 27px; 
+                &:first-child{
+                    padding: 0;
+                }
+                &.dropdown{
+                    position: relative;   
+                    padding-left: 47px; 
+                    .dropdown-menu{ 
+                        position: absolute; 
+                        left: 27px; 
+                        display: block; 
+                        @include transition;
+                        transform: rotateX(-90deg) !important;
+                        transform-origin: top !important; 
+                        &:before{ 
+                            content: "\f0d8";
+                            font: normal normal normal 30px/1 FontAwesome;
+                            position: absolute;
+                            top: -17px;
+                            left: 15px;
+                            color: #fff;
+                        } 
+                        li{
+                            display: block;
+                            padding: 0;
+                            width: 100%;
+                        }  
+                    } 
+                    &:hover, &:focus{  
+                        .dropdown-menu{
+                            transform: rotateX(0deg) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}  
+.hta_2{
+	background-color: transparent;
+	padding-top: 25px; 
+	.top_menu li, .right_menu li{
+		a{
+			color: #fff;
+			&:hover, &:focus{
+				color: $hover;
+			}
+		}
+		.number {
+			color: $hover;
+			small{
+				color: #fff;
+			}
+		}
+	}   
+}
+/* Search bar */
+.search_dropbown{  
+    padding: 0;
+    padding-right: 24px;
+    a{
+        line-height: 65px;
+        padding: 0 !important;
+        margin: 0 !important;
+        color: $pfont;
+        padding-left: 25px;
+        &:after, &:before{ 
+            display: none;
+        }
+        &:hover, &:focus{
+            color: $hover;
+        }  
+        i{
+            font-size: 18px;  
+        }
+    } 
+    .dropdown-menu{
+        margin: 0; 
+        padding: 10px !important;
+        border: 0;
+        border-radius: 0;
+        background: #fff;  
+        min-width: 280px !important;
+        margin-left: -219px !important;
+        box-shadow: 1px 0px 7px 0px rgba(22, 43, 70, 0.1);
+        z-index: 999999999;  
+        top: 100% !important;
+        &:before{
+            left: auto !important;
+            right: 20px;
+        }
+        li{
+            position: relative; 
+            padding: 0;
+            display: block;
+            width: 100%;
+            input{
+                font: 400 16px/40px $ssp;
+                background: #fff; 
+                display: inline-block;
+                border: 1px solid rgba(0,0,0,0.05);
+                padding:0 15px;
+                box-shadow: none;
+                outline: none;
+                width: 100%; 
+                @include placeholder{ 
+                    color: $pfont; 
+                }
+                &:focus{
+                    @include placeholder{
+                        color: #fff;
+                    }
+                }
+            }
+            span{
+                position: absolute;
+                cursor: pointer;
+                right: 0;
+                top: 0; 
+                line-height: 42px;
+                width: 40px;
+                background: $bc;
+                text-align: center;
+                @include transition; 
+                color: #fff;
+            } 
+
+            &:hover, &:focus{
+                input{
+                    border-color: $hover;
+                }
+                span{ 
+                    background: $hover;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+/* Search bar */  
+
+/* Min header area */
+.main_header_area{
+    display: block; 
+    width: 100%;
+    z-index: 9999;
+    position: absolute;  
+    left: 0;
+    right: 0;
+    top: 115px; 
+    .navbar{
+        padding: 0; 
+        width: 100%;
+        display: inline-block;
+        .navbar-brand{
+            padding: 0;
+            margin: 0;
+            padding-top: 14px;
+            img{
+                & +img{
+                    display: none;
+                }
+            }
+        }
+        .navbar_supported{
+            float: right;
+            background: $bc; 
+            padding: 19px 20px 19px 40px;
+            ul{
+                width: 100%;
+                padding-left: 32px;
+                li{
+                    a{
+                        margin: 0 17px; 
+                        padding: 0;
+                        color: #fff; 
+                        font: 400 18px/50px $nun; 
+                        position: relative; 
+                        &:hover, &:focus, &.active{ 
+                            color: $hover;
+                        }  
+                        &:after{
+                            display: none;
+                        }
+                    }  
+                    &.dropdown{
+                        position: relative; 
+                        .dropdown-menu{
+                            margin: 0; 
+                            padding: 0;
+                            border-radius: 0;   
+                            box-shadow: 1px 0px 7px 0px rgba(22, 43, 70, 0.1);
+                            &:before{ 
+                                content: "\f0d8";
+                                font: normal normal normal 30px/1 FontAwesome;
+                                position: absolute;
+                                top: -17px;
+                                left: 25px;
+                                color: #fff;
+                            }
+                            @media (min-width: 991px){
+                                position: absolute;
+                                top: 100%;
+                                left: -40px; 
+                                min-width: 240px; 
+                                background-color: #fff; 
+                                opacity: 0;
+                                transition: all 300ms ease-in;
+                                visibility: hidden;
+                                display: block;
+                                border: none;  
+                            }
+                            a{  
+                                background-color: transparent;
+                                font: 400 18px/45px $ssp;
+                                color: $pfont;
+                                margin: 0;
+                                display: block;
+                                padding: 0 20px; 
+                                border-bottom: 1px solid rgba(0,0,0,0.05);
+                                &:after{
+                                    border: 0;
+                                }
+                                &:hover, &:focus, &.active{
+                                    color: $hover; 
+                                    border-left: 4px solid $hover;
+                                }
+                            }
+                            
+                            /* Sub dropdown */ 
+                            >.dropdown{
+                                position: relative; 
+                                a:after{
+                                    border: 0;
+                                } 
+                                &:after{
+                                    content: "\f103";
+                                    position: absolute;
+                                    top: 0;
+                                    right: 20px;
+                                    font: normal normal normal 15px/48px FontAwesome;
+                                    color: $pfont;
+                                } 
+                                .dropdown-menu{ 
+                                    display: block; 
+                                    &:before{
+                                        content: "\f0d9";
+                                        font: normal normal normal 30px/1 FontAwesome;
+                                        color: rgba(0,0,0,0.05);
+                                        top: 7px;
+                                        left: -10px;
+                                    }
+                                    @media (min-width: 991px){
+                                        transform: translateZ(0);
+                                        transform: scaleX(0);
+                                        transform-origin: 0 50%;
+                                        position: absolute;
+                                        left: 100%;
+                                        right: auto;
+                                        width: auto;
+                                        top: 0px;  
+                                    }
+                                }
+                                
+                                &:hover, &:focus{
+                                    @media (min-width: 991px){
+                                        .dropdown-menu{
+                                            transform: scale(1, 1);
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                        &:hover, &:focus{
+                            .dropdown-menu{
+                                @media (min-width: 991px){
+                                    left: 0px;
+                                    visibility: visible;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                    .theme_btn{ 
+                        background: #356ecc; 
+                        min-width: 175px;
+                        display: inherit; 
+                        margin: 0;
+                        margin-left: 110px;  
+                    }
+                } 
+            }
+        }
+    }   
+    
+    &.navbar_fixed {
+        position: fixed;
+        width: 100%;
+        top: -70px;
+        left: 0; 
+        right: 0;   
+        z-index: 9999; 
+        padding: 0;
+        transform: translateY(70px);
+        transition: transform 500ms ease, background 200ms ease;
+        -webkit-transition: transform 500ms ease, background 200ms ease;  
+        .header_menu{  
+            background: $bc;   
+            padding: 0 20px;
+           .navbar{
+                .navbar-brand{
+                    padding-top: 4px; 
+                    img{
+                        display: none;
+                        & +img{
+                            display: block;
+                        }
+                    }
+                }
+                .navbar_supported{
+                    padding: 10px 0px;
+                }
+           } 
+        }
+    }
+}  
+.mha_2{
+	.header_menu{
+		background: $bc; 
+		@media(min-width: 991px){
+			.navbar-brand{
+				display: none;
+			}
+			.navbar .navbar_supported{
+				float: none;
+				padding-left: 10px;
+				.navbar-nav{
+					display: block;
+					li{
+						display: inline-block;
+						.dropdown-menu{
+							li{
+								display: block;
+							}
+						}
+					}
+					.apply_right{
+						float: right;
+					}
+				}
+			}
+		}
+		
+	}
+}

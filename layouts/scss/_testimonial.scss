@@ -1,0 +1,96 @@
+//Testimonial_area
+.testimonial_area, .testimonial_pages{
+	display: block;
+	overflow: hidden;
+	padding: 120px 0;
+	background: #f7f4f4;
+	.tittle{
+		padding-bottom: 75px;
+	}
+	.testimonial{
+		.item{
+			a{
+				font: 700 20px/1 $nun;
+				color: #151515;
+				display: block;
+				padding-bottom: 55px;
+			}
+			.client_info{
+				background: $bc;
+				border-radius: 0 0 40px 0;
+				padding: 60px 40px 70px 45px;
+				position: relative;
+				@include transition;
+				img{
+					width: auto;
+					border-radius: 50%;
+					width: 66px;
+					height: 66px;
+					position: absolute;
+					top: -33px;
+					left: 0;
+				}
+				h4{
+					color: #fff;
+					font: 600 18px/1 $nun;
+					padding-bottom: 30px;
+				}
+				p{
+					color: rgba(255, 255, 255, 0.702);
+					font-size: 18px;
+				}
+				&:hover, &:focus, &.fast_i{
+					background: $hover; 
+				}
+			}
+		}
+	}
+}
+.ta_2{
+	background: #fff; 
+}
+.testimonial_pages{
+	background: #fff;
+	.testimonial .item{
+		margin-bottom: 70px;
+	}
+}
+//End Testimonial_area
+
+//Get_started_area
+.get_started_area{ 
+	display: block;
+	overflow: hidden;
+	background: url("../images/get_started.jpg") no-repeat center fixed;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+	padding: 110px 0 100px;
+	text-align: center;
+	&:after{
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		display: block;
+		z-index: -1;
+		background-color: rgba(10, 22, 43, 0.89);
+	}
+	h2{
+		font: 600 53px/65px $nun;
+		color: $hover;
+	}
+	p{
+		color: #fff;
+		font: 600 19px/32px $nun;
+		padding: 30px 0 75px;
+	}
+	.theme_btn{
+		min-width: 263px;
+		font-size: 18px;
+	}
+}
+//Get_started_area
+ 

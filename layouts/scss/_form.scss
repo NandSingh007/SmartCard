@@ -1,0 +1,165 @@
+//subscirbe_area
+.subscirbe_area{
+	display: block;
+	overflow: hidden; 
+	.subscirbe_inner{
+		border-top: 1px solid #ebebea;
+		margin: 0;
+		padding: 120px 0;
+		h2{
+			padding: 0;
+			font: 600 35px/74px $nun;
+			color: #323232;
+		}
+		.input-group{
+			padding-right: 0;
+			box-shadow: 0px 0px 27px 0px rgba(194, 208, 240, 0.7);
+			border-radius: 0 0 30px 0;
+			.form-control{
+				font: 400 17px/72px $nun;
+				height: auto;
+				box-shadow: none;
+				outline: none;
+				border: 0;
+				color: $pfont;
+				border: 0;
+				padding: 0 30px;
+				@include placeholder{
+					color: $pfont;
+				}
+				&:focus{ 
+					@include placeholder{
+						color: transparent;
+					}
+				}
+			}
+			.input-group-text{
+				border: 0;
+				background-color: transparent;
+				padding: 0 45px;
+				cursor: pointer;
+				i:before{
+					font-size: 34px;
+					color: $bc;
+					@include transition;
+				}
+				&:hover, &:focus{
+					i:before{
+						color: $hover;
+					}
+				}
+			}
+		}
+	}
+}
+//subscirbe_area
+/* Map_from_area */ 
+.map_from_area{
+    display: block;
+    overflow: hidden; 
+	padding-bottom: 150px;
+    .map_area{
+        float: left;
+        display: inline-block;
+        overflow: hidden;
+        width: calc(50% - 15px);  
+		padding-right: 75px;
+		.map_content{  
+			background: #f7f7f7;
+			padding: 20px;
+			padding-top: 140px;
+			padding-bottom: 75px;
+			border-radius: 0 0 50px 0;
+			position: relative;
+			img{
+				max-width: 100%;
+			}
+			.marker_area{
+				position: absolute;
+				top: 177px;
+				right: 150px;
+				text-align: center;
+				width: 250px;
+				text-align: center; 
+				i:before{
+					font-size: 54px;
+					color: #f7f7f7;
+					line-height: 1;
+					cursor: pointer;
+				}
+				h4{
+					background: #fff;
+					padding: 20px;
+					font: 400 16px/28px $nun;
+					color: #535151;
+					border-radius: 0 0 30px 0;
+					@include transition; 
+					opacity: 0;
+				}
+				&:hover, &:focus{ 
+					h4{ 
+						opacity: 1; 
+					}
+				}
+			}
+		}
+    }
+    
+    .contact_inner{ 
+        display: inline-block;
+        width: calc(50% + 15px); 
+        .from_main{  
+            max-width: 600px; 
+			h4{
+				font: 400 25px/36px $nun;
+				color: #535151;
+				padding-bottom: 55px;
+			}
+            .form-group{
+                margin-bottom: 40px;
+                .form-control{
+                    box-shadow: none;
+                    outline: none; 
+                    border: 0;
+                    border-bottom: 1px solid #e3dfdf;
+                    font: 400 16px/50px $nun;
+                    color: #8f8e8e;
+                    border-radius: 0;
+                    height: auto;
+                    padding: 0; 
+                    resize: none; 
+                    @include placeholder{
+                        color: #8f8e8e;
+                    }
+                    &:focus{ 
+                        @include placeholder{
+                            color: #fff;
+                        }
+                    }
+                }
+                textarea{
+                    line-height: 30px !important;
+                    height: 120px !important;   
+                }
+                .theme_btn{
+					background: $hover;
+					border: 0;
+					box-shadow: none;
+					outline: none;
+					min-width: 197px;
+					margin-top: 30px;
+					&:before{ 
+        				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+						background: $bc;
+					} 
+                }
+                &.has-error{
+                    .form-control{
+                        border-color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+/* End map_from_area */ 

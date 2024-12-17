@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Quick - Fast and Reliable Loan Solutions</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Loan Quick offers fast and reliable loan solutions to help you achieve your dreams. Apply now and get approved quickly.">
+    <meta name="keywords" content="loan, quick loan, fast loan, reliable loan, loan solutions">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Loan Quick - Fast and Reliable Loan Solutions">
+    <meta property="og:description" content="Loan Quick offers fast and reliable loan solutions to help you achieve your dreams. Apply now and get approved quickly.">
+    <meta property="og:image" content="path/to/your/image.jpg">
+    <meta property="og:url" content="https://www.loanquick.com">
+
+   <!-- Favicon -->
+   
+   <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+/* Example CSS */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(96, 96, 95, 0.541);
+}
+/* Main navbar styling */
+/* Main navbar styling */
+/* Main navbar styling */
+.navbar {
+    background-color: #041b95e6 !important; /* Dark navy blue background */
+    padding: 10px 20px; /* Add padding for spacing */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Enhanced shadow for depth */
+}
+
+/* Logo styling */
+.navbar-brand img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid rgb(255, 145, 0);
+}
+
+
+/* Logo hover effect */
+.navbar-brand img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Navbar link styling */
+.navbar-nav .nav-link {
+    color: #e0e0e0; /* Light grey text color */
+    font-size: 1.1rem; /* Slightly larger font size */
+    margin-left: 20px; /* Space between menu items */
+    position: relative; /* Position for pseudo-element */
+    transition: color 0.3s ease, padding 0.3s ease; /* Smooth transitions */
+}
+
+/* Navbar link hover effects */
+.navbar-nav .nav-link::before {
+    content: ""; /* Empty content for pseudo-element */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Positioned below text */
+    height: 3px; /* Thickness of the underline */
+    width: 0; /* Start with no underline */
+    background-color: #ff5722; /* Vibrant orange underline color */
+    transition: width 0.3s ease; /* Smooth underline effect */
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%; /* Expand underline on hover */
+    box-shadow: 0 2px 5px rgba(255, 87, 34, 0.5); /* Orange shadow effect on hover */
+}
+
+/* Toggler button styling */
+.navbar-toggler {
+    border: none; /* Remove default border */
+    /* background-color: #333; Dark grey background for the toggler button */
+    border-radius: 50%; /* Rounded corners for the button */
+}
+
+/* Toggler icon styling */
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.9)" stroke-width="2" d="M5 7h20M5 15h20M5 23h20"/%3E%3C/svg%3E');
+    background-color: transparent; /* Ensure background is transparent */
+}
+
+/* Styles for the profile photo container */
+.profile-photo-container {
+    width: 100px; /* Size of the circular profile photo */
+    height: 100px;
+    border-radius: 50%; /* Circular shape */
+    overflow: hidden; /* Hide overflow to keep the circle shape */
+    border: 2px solid #ccc; /* Border around the photo */
+    margin-top: 10px; /* Spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 100%; /* Fill the container */
+    height: 100%;
+    object-fit: cover; /* Cover the cont
+    ainer */
+    /* background-color: yellowgreen !important
+    ; */
+}
+
+#cameraContainer {
+    margin-top: 10px;
+    text-align: center; /* Center the content */
+}
+
+
+.footer {
+  background-color: #041b95e6;
+  color: #ffffff;
+  padding: 40px 40px;
+}
+
+.section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.connect {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-link {
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+  color: #007bff;
+  transform: scale(1.2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.column {
+  flex: 1;
+  min-width: 220px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  position: relative;
+  font-weight: bold;
+}
+
+.title i {
+  margin-right: 10px;
+}
+
+.highlight-red {
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.highlight-info {
+  color: #17a2b8;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.highlight-slateblue {
+  color: slateblue;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #0056b3;
+}
+
+.copy {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #b80078;
+}
+
+.copy .link {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .connect {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-link {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .highlight-red, .highlight-info, .highlight-slateblue {
+    font-size: 14px;
+  }
+
+  .connect {
+    font-size: 14px;
+  }
+}
+/* Improved Form Styles */
+.form-section {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #343a40;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.form-group input[type="file"],
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input[type="file"] {
+    border: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+.progress-container {
+    margin-bottom: 30px;
+}
+
+.step-indicators {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.step-indicator {
+    text-align: center;
+    flex: 1;
+}
+
+.step-indicator.active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.step-indicator.completed {
+    color: #28a745;
+}
+
+.step-indicator .circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.step-indicator.active .circle {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.step-indicator.completed .circle {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.step-indicator .label {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 9999;
+    display: none;
+}
+
+.loading-circle {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 8px solid #fff;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+    margin-right: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.form-section {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+    }
+    .step-indicators .step-indicator {
+        text-align: center;
+        flex: 1;
+    }
+    .step-indicators .step-indicator .circle {
+        width: 40px;
+        height: 40px;
+        background-color: #007bff;
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 10px;
+    }
+    .step-indicators .step-indicator.active .circle {
+        background-color: #28a745;
+    }
+    .step-indicators .step-indicator .label {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .form-group label {
+        font-weight: 600;
+    }
+    .form-group input,
+    .form-group select {
+        border-radius: 5px;
+    }
+    .btn {
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #5a6268;
+    }
+    @media (max-width: 576px) {
+        .form-section {
+            padding: 15px;
+        }
+    }
+
+    .profile-photo-container img {
+        max-width: 150px;
+        max-height: 150px;
+        border-radius: 50%;
+        border: 3px solid #28a745;
+    }
+
+    .step-indicator .circle {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin: 0 auto;
+        font-size: 18px;
+    }
+
+    .step-indicator.active .circle {
+        background-color: #28a745;
+    }
+
+    .step-indicator .label {
+        margin-top: 8px;
+        font-weight: bold;
+    }
+
+    #cameraStream {
+        max-width: 100%;
+    }
+
+    .btn {
+        border-radius: 20px;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    .form-control {
+        border-radius: 8px;
+    }
+  
+.text-container {
+    position: relative; /* Establishes a containing block for absolutely positioned child */
+    overflow: hidden; /* Hides the overflowing text */
+    white-space: nowrap; /* Prevents text from wrapping */
+    width: 100%; /* Or specify a width that fits your design */
+    height: 5.2em; /* Adjust based on text size */
+    box-sizing: border-box; /* Ensures padding and borders are included in width and height */
+    /* background: #ffffff; Optional: background color for better visibility */
+}
+
+.textet {
+    font-size: 1.5rem; /* Increase the font size for better visibility */
+    color: #ffffff !important; /* White text for a clean contrast */
+    background: linear-gradient(135deg, #28a745, #218838); /* Gradient background */
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 15px 20px; /* Increased padding for a more balanced look */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    border: 2px solid #1c7430; /* Darker border to define the edges */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adds a shadow to the text itself */
+    letter-spacing: 1px; /* Slight letter spacing for readability */
+    white-space: nowrap; /* Ensures the text stays in one line */
+    position: absolute; /* Allows animation to work relative to the container */
+    animation: scroll-left 15s linear infinite; /* Adjust duration as needed */
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%); /* Start from right outside the container */
+    }
+    to {
+        transform: translateX(-100%); /* Move to left outside the container */
+    }
+}
+
+/* Hover effect */
+.textet:hover {
+    background: linear-gradient(135deg, #218838, #1c7430); /* Darken the gradient on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Enhance shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the text on hover */
+}
+
+.step-indicator {
+    cursor: pointer;
+}
+
+.step-indicator.active .circle {
+    background-color: #007bff;
+    color: white;
+}
+
+.step-indicator .circle {
+    background-color: #ccc;
+    color: #343a40;
+}
+
+.step-indicator.active .label {
+    color: #007bff;
+}
+
+    </style>
+</head>
+   <!-- Navbar -->
+  
+<main class="container my-5" style="background-color: #f8f9fa; padding: 30px; border-radius: 8px;">
+    <div class="form-section">
+      <h2 class="mb-4 heading-with-icon" style="color: #007bff; text-align: center; font-size: 2rem; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: 700;">
+        <i class="fas fa-user" style="margin-right: 8px;"></i>
+    Document and Personal Information
+</h2>
+     <div class="text-container">
+            <p class="textet">By submitting, you confirm the information is accurate and agree to the terms.</p>
+        </div>
+        
+   
+
+		<div class="form-step">
+			<form id="documentForm" enctype="multipart/form-data" >
+			  <!-- Avatar Section -->
+			  <!-- Camera Container -->
+			
+			  <!-- Aadhaar Card Photos -->
+			  <div class="container">
+				<div class="row">
+				  <div class="col-md-6">
+					<div class="mb-3 form-group">
+					  <label
+						class="form-control"
+						for="adharcardFront"
+						style="color: #ffffff; padding: 15px 0; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 1.3rem; text-align: center; background-color: #0056b3;"
+					  >
+						<i class="fas fa-id-card" style="margin-right: 8px; font-size: 1.5rem;"></i>
+						Aadhaar Card Front Photo
+					  </label>
+					  <input
+						type="file"
+						id="adharcardFront"
+						name="adharcardFront"
+						accept="image/*"
+						class="form-control"
+						style="border: 1px solid #007bff;"
+						required
+					  />
+					</div>
+				  </div>
+				  <div class="col-md-6">
+					<div class="mb-3 form-group">
+					  <label
+						class="form-control"
+						for="adharcardBack"
+						style="color: #ffffff; padding: 15px 0; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 1.3rem; text-align: center; background-color: #0056b3;"
+					  >
+						<i class="fas fa-id-card" style="margin-right: 8px; font-size: 1.5rem;"></i>
+						Aadhaar Card Back Photo
+					  </label>
+					  <input
+						type="file"
+						id="adharcardBack"
+						name="adharcardBack"
+						accept="image/*"
+						class="form-control"
+						style="border: 1px solid #007bff;"
+						required
+					  />
+					</div>
+				  </div>
+				</div>
+			  </div>
+		  
+			  <!-- Aadhaar Card Number -->
+			  <div class="container">
+				<div class="row">
+				  <div class="col-md-6">
+					<div class="mb-3 form-group">
+					  <label
+						class="form-control"
+						for="adharcardNumber"
+						style="color: #ffffff; padding: 15px 0; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 1.3rem; text-align: center; background-color: #0056b3;"
+					  >
+						<i class="fas fa-hashtag" style="margin-right: 8px; font-size: 1.5rem;"></i>
+						Aadhaar Card Number
+					  </label>
+					  <input
+						type="number"
+						id="adharcardNumber"
+						name="adharcardNumber"
+						placeholder="Enter Aadhaar number"
+						class="form-control"
+						style="border: 1px solid #007bff;"
+						oninput="validateAadhaarNumber(this)"
+						required
+					  />
+					  <small
+						id="adharcardNumberHelp"
+						class="form-text text-danger"
+						style="display: none;"
+					  >
+						Please enter a valid 12-digit Aadhaar number.
+					  </small>
+					</div>
+				  </div>
+		  
+				  <!-- PAN Card Number -->
+				  <div class="col-md-6">
+					<div class="mb-3 form-group">
+					  <label
+						class="form-control"
+						for="pancardNumber"
+						style="color: #ffffff; padding: 15px 0; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 1.3rem; text-align: center; background-color: #0056b3;"
+					  >
+						<i class="fas fa-hashtag" style="margin-right: 8px; font-size: 1.5rem;"></i>
+						PAN Card Number
+					  </label>
+					  <input
+						type="text"
+						id="pancardNumber"
+						name="pancardNumber"
+						placeholder="Enter your PAN card number"
+						class="form-control"
+						style="border: 1px solid #007bff; text-transform: uppercase;"
+						oninput="validatePANCardNumber(this)"
+						maxlength="10"
+						required
+					  />
+					  <small
+						id="pancardNumberHelp"
+						class="form-text text-muted"
+						style="display: none; color: red !important;"
+					  >
+						Please enter a valid PAN Card number. Format: { ABCDE1234F } (5 letters, 4 digits, 1 letter)
+					  </small>
+					</div>
+				  </div>
+				  
+				</div>
+			  </div>
+		  
+			  <!-- PAN Card Photo -->
+			  <div class="container">
+				<div class="row">
+				  <div class="col-md-12">
+					<div class="mb-3 form-group">
+					  <label
+						class="form-control"
+						for="pancardPhoto"
+						style="color: #ffffff; padding: 15px 0; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 1.3rem; text-align: center; background-color: #0056b3;"
+					  >
+						<i class="fas fa-camera" style="margin-right: 8px; font-size: 1.5rem;"></i>
+						PAN Card Photo
+					  </label>
+					  <input
+						type="file"
+						id="pancardPhoto"
+						name="pancardPhoto"
+						accept="image/*"
+						class="form-control"
+						style="border: 1px solid #007bff;"
+						required
+					  />
+					</div>
+				  </div>
+				</div>
+			  </div>
+		  
+			  <!-- Additional Fields -->
+			  <div class="container">
+				<div class="row">
+				  <div class="col-md-6">
+					<div class="mb-3 form-group">
+					  <label
+						for="fatherName"
+						class="form-control"
+						style="color: #ffffff; padding: 15px 0; text-align: center; background-color: #0056b3;"
+					  >
+						<i class="fas fa-user"></i> Father's Name
+					  </label>
+					  <input
+						type="text"
+						id="fatherName"
+						name="fatherName"
+						placeholder="Enter Father's Name"
+						class="form-control"
+						style="border: 1px solid #007bff;"
+						required
+					  />
+					</div>
+				  </div>
+		  
+				  <div class="col-md-6">
+					<div class="mb-3 form-group">
+					  <label
+						for="email"
+						class="form-control"
+						style="color: #ffffff; padding: 15px 0; text-align: center; background-color: #0056b3;"
+					  >
+						<i class="fas fa-envelope"></i> Email
+					  </label>
+					  <input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="Enter Email Address"
+						class="form-control"
+						style="border: 1px solid #007bff;"
+						required
+					  />
+					</div>
+				  </div>
+				</div>
+		  
+				<div class="row">
+				  <div class="col-md-6">
+					<div class="mb-3 form-group">
+					  <label
+						for="employType"
+						class="form-control"
+						style="color: #ffffff; padding: 15px 0; text-align: center; background-color: #0056b3;"
+					  >
+						<i class="fas fa-briefcase"></i> Employment Type
+					  </label>
+					  <select
+						id="employType"
+						name="employType"
+						class="form-control"
+						style="border: 1px solid #007bff;"
+						required
+					  >
+						<option value="" disabled selected>Select Employment Type</option>
+						<option value="private">Private</option>
+						<option value="government">Government</option>
+						<option value="business">Business</option>
+					  </select>
+					</div>
+				  </div>
+		  
+				  <div class="col-md-6">
+					<div class="mb-3 form-group">
+					  <label
+						for="gender"
+						class="form-control"
+						style="color: #ffffff; padding: 15px 0; text-align: center; background-color: #0056b3;"
+					  >
+						<i class="fas fa-user"></i> Gender
+					  </label>
+					  <select
+						id="gender"
+						name="gender"
+						class="form-control"
+						style="border: 1px solid #007bff;"
+						required
+					  >
+						<option value="" disabled selected>Select Gender</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+						<option value="other">Other</option>
+					  </select>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		  
+			  <!-- Submit Button -->
+			  <div class="form-group">
+				<button type="submit" class="btn btn-primary w-100">
+				  Submit
+				</button>
+			  </div>
+			</form>
+		  </div>
+		  
+		  <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
+		  <script>
+			document.addEventListener('DOMContentLoaded', () => {
+			  const token = localStorage.getItem('token');
+			  if (!token) {
+				window.location.href = 'https://smartpaycard.in/index.html';  // Redirect to login if token is not found
+				return;
+			  }
+			
+			  try {
+				const decodedToken = jwt_decode(token);
+				const userId = decodedToken.id; // Assuming the userId is stored in the token payload
+				console.log('Decoded User ID:', userId);
+			  } catch (error) {
+				console.error('Invalid token:', error);
+			  }
+			});
+		  
+			// Validate PAN Card number
+			function validatePANCardNumber(input) {
+			  const panPattern = /^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/; 
+			  const isValid = panPattern.test(input.value); // Validate input value
+			  document.getElementById("pancardNumberHelp").style.display = isValid ? 'none' : 'block';
+			  return isValid;
+			}
+		  
+			// Validate Aadhaar number
+			function validateAadhaarNumber(input) {
+			  const value = input.value;
+			  const aadhaarHelp = document.getElementById('adharcardNumberHelp');
+			  
+			  if (value.length === 0) {
+				aadhaarHelp.style.display = 'none';
+			  } else if (value.length > 12) {
+				input.value = value.slice(0, 12); // Ensure only 12 digits are allowed
+				aadhaarHelp.style.display = 'block'; // Show error if more than 12 digits
+			  } else {
+				aadhaarHelp.style.display = value.length < 12 ? 'block' : 'none'; // Show error if less than 12 digits
+			  }
+			  
+			  return value.length === 12;
+			}
+		  
+			// Handle form submission, prevent page reload and log data
+			async function validateForm(event, formId) {
+			  event.preventDefault(); // Prevent the page reload
+			  
+			  const form = document.getElementById(formId);
+			  const panCardInput = document.getElementById('pancardNumber');
+			  const aadhaarInput = document.getElementById('adharcardNumber');
+			  const adharcardFront = document.getElementById('adharcardFront');
+			  const adharcardBack = document.getElementById('adharcardBack');
+			  const pancardPhoto = document.getElementById('pancardPhoto');
+			  const fatherName = document.getElementById('fatherName');
+			  const email = document.getElementById('email');
+			  const employType = document.getElementById('employType');
+			  const gender = document.getElementById('gender');
+
+
+			  // Validate PAN and Aadhaar numbers
+			  const isPANValid = await validatePANCardNumber(panCardInput);
+			  const isAadhaarValid = await validateAadhaarNumber(aadhaarInput);
+			
+			  if (isPANValid && isAadhaarValid) {
+				// Decode token and get userId
+				const token = localStorage.getItem('token');
+				const decodedToken = jwt_decode(token);
+				const userId = decodedToken.id;
+			
+				console.log('User ID:', userId);
+		  
+				// Create a FormData object to handle file uploads
+				const formData = new FormData();
+				formData.append('userId', userId);
+				formData.append('PancardNumber', panCardInput.value);
+				formData.append('AdharcardNumber', aadhaarInput.value);
+				formData.append('FatherName', fatherName.value);
+				formData.append('email', email.value);
+				formData.append('EmployType', employType.value);
+				formData.append('gender', gender.value);
+		  
+				// Append the image files if they exist
+				if (adharcardFront.files.length > 0) {
+				  formData.append('adharFrontPageImg', adharcardFront.files[0]);
+				}
+				if (adharcardBack.files.length > 0) {
+				  formData.append('adharBackPageImg', adharcardBack.files[0]);
+				}
+				if (pancardPhoto.files.length > 0) {
+				  formData.append('panCardPageImg', pancardPhoto.files[0]);
+				}
+				console.log( adharcardFront.files[0],adharcardBack.files[0], pancardPhoto.files[0],)
+			  
+				// Log the form data to verify
+				console.log('Form Data:', formData);
+		  
+				// Make API call to submit data
+				fetch('https://smartpaycard.in/identity', {
+  method: 'POST',
+  body: formData, // Send the FormData with text and files
+})
+  .then(response => {
+    // Check if the response status is OK (2xx)
+    if (!response.ok) {
+      return response.json().then(errorData => {
+        throw new Error(errorData.message || 'An error occurred.');
+      });
+    }
+    return response.json();  // Parse the JSON if the response is OK
+  })
+  .then(data => {
+    console.log('Data submitted successfully:', data);
+	window.location.href = 'https://smartpaycard.in/firstcard.html'; 
+  })
+  .catch(error => {
+    console.error('Error submitting data:', error);
+    alert(`There was an error submitting your data: ${error.message}`);
+  });
+
+			  } else {
+				alert('Please ensure both PAN and Aadhaar numbers are valid.');
+			  }
+			}
+		  
+			// Attach the form validation to your form
+			document.getElementById('documentForm').addEventListener('submit', (event) => validateForm(event, 'documentForm'));
+		  </script>
+		  
+             
+            <div class="mt-4 key-points">
+                <h4>Key Points:</h4>
+                <ul style="list-style-type: none; padding-left: 0; color: #343a40;">
+                    <li style="margin-bottom: 10px;">
+                        <i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>
+                        Ensure all documents are clear and legible before uploading.
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <i class="fas fa-info-circle" style="color: #ff8800; margin-right: 10px;"></i>
+                        The Aadhaar number must be a 12-digit number without spaces or special characters.
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <i class="fas fa-id-card" style="color: #007bff; margin-right: 10px;"></i>
+                        Provide a valid PAN number in uppercase format.
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <i class="fas fa-camera" style="color: #343a40; margin-right: 10px;"></i>
+                        Use the 'Capture' button to take a photo directly from your camera, or 'Gallery' to upload from your device.
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <i class="fas fa-eye" style="color: #ff8800; margin-right: 10px;"></i>
+                        Review all uploaded documents carefully before proceeding to the next step.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        </div>
+       
+                <!-- New Section for Key Points -->
+         
+
+    <!-- Key Points Section with Icons -->
+ 
+</div>
+
+    </div>
+</main>
+
+<!-- Footer -->
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-circle"></div>
+    <div>Document Scanning...</div>
+</div>
+
+
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

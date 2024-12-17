@@ -1,0 +1,312 @@
+
+<!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<div class="px-4 pt-6">
+
+  <!-- Insurance Section -->
+  <div class="p-6 bg-white rounded-lg shadow-md">
+    <h2 class="mb-6 text-xl font-semibold">Insurance Section</h2>
+    
+    <!-- Table for Insurance Fields -->
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-sm text-left text-gray-500">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-4 py-2 font-medium text-gray-900">Series No.</th>
+            <th class="px-4 py-2 font-medium text-gray-900">Name of Bank</th>
+            <th class="px-4 py-2 font-medium text-gray-900">Amount</th>
+            <th class="px-4 py-2 font-medium text-gray-900">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="insuranceTableBody">
+          <!-- Dynamically added rows will appear here -->
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Modal for Editing Data -->
+    <!-- Modal for Editing Data -->
+<div id="editModal" class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-gray-900 bg-opacity-50">
+  <div class="p-6 bg-white rounded shadow">
+    <h2 class="mb-4 text-lg font-bold">Edit Insurance Data</h2>
+    <form id="editInsuranceForm">
+      <!-- Bank Name Field -->
+      <div class="mb-4">
+        <label class="block mb-2 font-medium text-gray-700" for="editBankName">Bank Name</label>
+        <input type="text" id="editBankName" class="w-full px-3 py-2 border rounded" />
+      </div>
+
+      <!-- Amount Field -->
+      <div class="mb-4">
+        <label class="block mb-2 font-medium text-gray-700" for="editAmount">Amount</label>
+        <input type="number" id="editAmount" class="w-full px-3 py-2 border rounded" />
+      </div>
+
+      <!-- Buttons Section with Icons -->
+      <div class="flex justify-between mt-4">
+        <!-- Save Icon -->
+        <button type="button" onclick="saveEditedData()" class="text-xl text-green-600 hover:text-green-800 focus:outline-none">
+          <i class="fas fa-check"></i> <!-- Check Icon for Save -->
+        </button>
+
+        <!-- Cancel Icon -->
+        <button type="button" onclick="closeEditModal()" class="text-xl text-red-600 hover:text-red-800 focus:outline-none">
+          <i class="fas fa-times"></i> <!-- Times Icon for Cancel -->
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+    
+
+    <!-- Add New Field Button -->
+    <div class="flex justify-end mt-4">
+      <button id="addFieldBtn" onclick="openModal()" class="px-6 py-2 bg-blue-600 text-white font-semiboldrounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 !important">
+        Add Field
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Adding New Field -->
+<div id="addFieldModal" class="fixed inset-0 flex items-center justify-center hidden bg-gray-500 bg-opacity-75 border-black">
+  <div class="w-3/4 p-6 bg-white rounded-lg shadow-lg md:w-2/3 lg:w-1/2" style="max-width: 600px;">
+    <h2 class="mb-4 text-2xl font-semibold text-center">Add Insurance Field</h2>
+
+    <!-- Modal Form -->
+    <form id="insuranceForm">
+   
+
+      <!-- Name of Bank -->
+      <div class="mb-4">
+        <label for="bankName" class="block text-sm font-medium text-gray-700">Name of Bank</label>
+        <input type="text" id="bankName" name="bankName" class="block w-full px-4 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required>
+      </div>
+
+      <!-- Amount -->
+      <div class="mb-4">
+        <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
+        <input type="number" id="amount" name="amount" class="block w-full px-4 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required>
+      </div>
+
+      <!-- Buttons Section -->
+      <div class="flex justify-between mt-4">
+        <!-- Close Button -->
+        <button onclick="closeModal()" id="closeModalBtn" class="mb-4 text-lg font-semibold text-blue-600 hover:text-blue-800">
+          Close
+        </button>
+
+        <!-- Save Button -->
+        <button type="button" id="saveBtn" onclick="submitField()" class="px-5 py-1 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 !important">
+         Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Function to open the modal// Function to open the modal
+function openModal() {
+  document.getElementById("addFieldModal").classList.remove("hidden");
+}
+
+// Function to close the modal
+function closeModal() {
+  document.getElementById("addFieldModal").classList.add("hidden");
+}
+
+// Function to submit the field to the API
+async function submitField() {
+  const bankName = document.getElementById("bankName").value;
+  const amount = document.getElementById("amount").value;
+
+  if (!bankName || !amount) {
+    alert("Please fill in both fields.");
+    return;
+  }
+
+  // Send data to the backend
+  try {
+    const response = await fetch("https://smartpaycard.in/Insurance", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ bankName, amount }),
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      console.log("Data added successfully:", result);
+
+      // Reload the page to reflect changes
+      window.location.reload();
+    } else {
+      const error = await response.json();
+      console.error("Error adding data:", error.message);
+      alert("Failed to add data: " + error.message);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("An error occurred while adding the data.");
+  }
+}
+
+</script>
+
+<script>
+  let editRowId = null; // To store the ID of the row being edited
+
+  // Function to fetch and display insurance data
+  async function fetchInsuranceData() {
+    try {
+      const response = await fetch("https://smartpaycard.in/getAllInsuranceData");
+      if (!response.ok) {
+        throw new Error("Failed to fetch insurance data");
+      }
+
+      const data = await response.json();
+
+      const tableBody = document.getElementById("insuranceTableBody");
+      tableBody.innerHTML = ""; // Clear existing rows
+
+      data.data.forEach((item, index) => {
+        const newRow = document.createElement("tr");
+        newRow.classList.add("border-b");
+
+        newRow.innerHTML = `
+          <td class="px-4 py-2">${index + 1}</td>
+          <td class="px-4 py-2">${item.bankName}</td>
+          <td class="px-4 py-2">${item.amount}</td>
+          <td class="px-4 py-2">
+            <button onclick="openEditModal('${item._id}', '${item.bankName}', '${item.amount}')" class="text-blue-500 hover:underline">
+              ✏️ Edit
+            </button>
+          </td>
+        `;
+
+        tableBody.appendChild(newRow);
+      });
+    } catch (error) {
+      console.error("Error fetching insurance data:", error);
+    }
+  }
+
+  // Open modal with data pre-filled for editing
+  function openEditModal(id, bankName, amount) {
+    editRowId = id;
+    document.getElementById("editBankName").value = bankName;
+    document.getElementById("editAmount").value = amount;
+    document.getElementById("editModal").classList.remove("hidden");
+  }
+
+  // Close the edit modal
+  function closeEditModal() {
+    document.getElementById("editModal").classList.add("hidden");
+    editRowId = null;
+  }
+
+  // Save the edited data
+  async function saveEditedData() {
+    const bankName = document.getElementById("editBankName").value;
+    const amount = document.getElementById("editAmount").value;
+// alert(editRowId)
+    if (!editRowId || !bankName || !amount) {
+      alert("Please provide valid data");
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://smartpaycard.in/insurancedit`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ bankName, amount ,editRowId}),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update insurance data");
+      }
+
+      alert("Data updated successfully");
+      closeEditModal();
+      fetchInsuranceData(); // Refresh the table
+    } catch (error) {
+      console.error("Error updating insurance data:", error);
+      alert("Failed to update data");
+    }
+  }
+
+  // Fetch data on page load
+  document.addEventListener("DOMContentLoaded", fetchInsuranceData);
+</script>
+
+<!-- Styles to improve button visibility -->
+<style>
+  #addFieldBtn {
+    background-color: #2563EB !important;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  #addFieldBtn:hover {
+    background-color: #1D4ED8 !important;
+  }
+
+  #saveBtn {
+    background-color: #10B981 !important;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  #saveBtn:hover {
+    background-color: #059669 !important;
+  }
+
+  /* Close button style */
+  #closeModalBtn {
+    background-color: transparent !important;
+    color: #2563EB !important;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+  }
+
+  #closeModalBtn:hover {
+    color: #1D4ED8 !important;
+  }
+
+  /* Modal Button Icon Styling */
+#editModal button {
+  font-size: 24px;  /* Icon size */
+  padding: 10px;    /* Padding around the icon */
+  border-radius: 50%;  /* Round shape */
+  background-color: transparent;  /* Transparent background */
+  border: 1px solid transparent;  /* Transparent border */
+  transition: all 0.3s ease;  /* Smooth transition for hover effects */
+}
+
+/* Hover Effect for Save Icon */
+#editModal button:hover {
+  transform: scale(1.1); /* Slight scaling on hover */
+}
+
+/* Green Save Icon Hover Style */
+#editModal button:hover .fas.fa-check {
+  color: #2ecc71;  /* Green color for save icon */
+}
+
+/* Red Cancel Icon Hover Style */
+#editModal button:hover .fas.fa-times {
+  color: #e74c3c;  /* Red color for cancel icon */
+}
+
+</style>
+

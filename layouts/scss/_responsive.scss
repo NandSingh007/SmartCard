@@ -1,0 +1,594 @@
+// Extra Large devices (desktops, less than 1231px)
+@media (max-width: 1780px){
+	.pra_2 .previous_right .previous_img_2{
+		width: 42%;
+	}
+}
+@media (max-width: 1440px){
+	.gla_2 .loan-card img{
+		margin-left: 0;
+		max-width: 100%; 
+	}
+}
+// Large devices (desktops, less than 1231px)
+@media (max-width: 1199px) { 
+    .main_header_area .navbar .navbar_supported{
+        padding-left: 0;
+        ul{
+            padding-left: 0;
+            li{
+                a{
+                    margin: 0 15px;
+                }
+                .theme_btn{
+                    margin-left: 10px;
+                } 
+            } 
+        }
+    } 
+	.footer_area .footer_inner .footer_widget{
+		padding-left: 15px;
+	}
+	.hta_2 {
+		.top_menu li .number{
+			font-size: 16px;
+			padding-right: 0;
+			small{
+				font-size: 16px;
+			}
+		}
+		.right_menu .right_nav li{
+			padding-left: 20px;
+		}
+	} 
+	.potential_area .potential .ptl_containt .heding{
+		font-size: 18px;
+	}
+	.subscirbe_area .subscirbe_inner h2{
+		font-size: 20px;
+	}
+	.afa_2 .achieve_inner .personal_tittle .theme_btn{
+		float: none;
+		margin-top: 30px;
+	}
+	.pra_2 .previous_right{
+		width: 100%;
+	}
+	.pra_2:after{
+		width: 100%;
+	}
+	.eligibility_criteria_area{
+		.eligibility_criteria{
+			padding-left: 15px;
+		}
+	}
+	.portfolio_area .protfoli_filter li{
+		a{
+			font-size: 16px;
+			line-height: 40px;
+		}
+		&:hover, &:focus, &.active{
+			a:after{
+				bottom: -9px;
+			}
+		}  
+	}  
+	.blog_single .bg_text{
+		background-size: cover;
+		p{
+			float: none;
+		}
+		 .theme_btn{
+			float: none;
+			margin: 0 auto;
+			margin-top: 20px;
+			 width: 160px;
+			 display: block;
+			 overflow: hidden;
+		}
+	}
+	.map_from_area{
+		padding-bottom: 70px;
+		.map_area{
+			width: 100%;
+			text-align: center; 
+			padding-right: 0;
+		}
+		.contact_inner{
+			width: 100%;
+			padding: 0 15px;
+			padding-top: 80px;
+		}
+	}
+	
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991px) { 
+    .header_top_area .top_menu li .number, .header_top_area .right_menu li .number{
+        font-size: 18px;
+        padding: 0;
+    } 
+    .main_header_area{  
+        top: 80px;
+        .header_menu { 
+            background: $bc;
+            padding: 10px 20px; 
+            .navbar{  
+                width: 100%;
+                .navbar-brand{
+                    padding-top: 0;
+                    img{
+                        display: none;
+                        & +img{
+                            display: block;
+                        }
+                    }
+                }
+                .navbar-toggler{ 
+                    font-size: 30px;
+                    color: #fff;
+                    padding: 0;
+                    margin: 0;
+                    line-height: 50px;
+                    float: right;
+                    padding-left: 30px; 
+                }
+                .navbar_supported{
+                    float: none;
+                    padding: 0;
+                    padding-bottom: 10px;
+                }
+                .navbar-nav{ 
+                    margin: 0;
+                    margin-top: 2px;
+                    border: 1px solid rgba(225, 225, 225, 0.2);
+                    max-height: 335px;
+                    overflow-y: auto;
+                    padding-left: 0 !important;
+                    li{
+                        border-bottom: 1px solid rgba(225, 225, 225, 0.2);
+                        &:last-child{
+                            border: 0;
+                        }
+                        a{ 
+                            line-height: 45px !important;
+                            margin: 0 20px !important;
+                            &:after{
+                                display: none;
+                            }
+                        }
+                        .theme_btn{
+                            margin: 0 !important;
+                            border-radius: 0; 
+                        }
+                        &.dropdown{
+                            position: relative;
+                            &:after{
+                                content: "\f103";
+                                position: absolute;
+                                top: 0;
+                                right: 20px;
+                                font: normal normal normal 15px/48px FontAwesome;
+                                color: #fff;
+                            }
+                            .dropdown-menu{
+                                background-color: transparent;
+                                border: 0;
+                                border-top: 1px solid rgba(225, 225, 225, 0.2);
+                                &:before{
+                                    display: none;
+                                }
+                                li a{ 
+                                    border: 0;
+                                    color: #fff; 
+                                    &:hover, &:focus, &.active{
+                                        color: #fff;
+                                        border: 0;
+                                    }
+                                }
+                                .dropdown:after{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }  
+        } 
+    }  
+	.footer_area .footer_inner .footer_logo .footer_social li{
+		margin-right: 20px;
+	}
+	.hta_2 {
+		padding-top: 0;
+		.hidden-md{
+			display: none;
+		}
+	}
+	.achieve_financial_area .achieve_inner .theme_btn{
+		float: none;
+		margin-top: 30px;
+	}
+	.previous_record_area {
+		.previous_img{
+			float: none;
+			width: 100%;
+			padding-top: 0; 
+		}
+		.previous_right{
+			float: none;
+			width: 100%; 
+			padding-top: 50px;
+		}
+		
+		&:after{
+			display: none;
+		}
+		.alons_text{
+			padding-bottom: 20px;
+		}
+	}
+	.potential_area .potential{
+		max-width: 270px;
+		margin: 0 auto 30px;
+	}
+	.getting_loan_area .loan-card{
+		padding-left: 15px;
+		padding-bottom: 80px;
+		padding-top: 30px;
+		img{
+			max-width: 100%;
+		}
+	}
+	.latest_news_area .tittle .theme_btn{
+		float: none;
+		margin-top: 30px;
+	}
+	.subscirbe_area .subscirbe_inner h2{
+		text-align: center;
+	} 
+	.pra_2{
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 0;
+		padding-bottom: 80px;
+		&:before{
+			background-color: transparent;
+		}
+		.previous_right{
+			padding-top: 0;
+			.previous_content .alons_text{
+				padding-left: 15px;
+			}
+		} 
+		.previous_right .previous_img_2{
+			width: 100%;
+			margin-top: 50px;
+			text-align: center;
+		}
+	}
+	.purpose_area {
+		padding-top: 50px;
+		.mission{
+			display: block;
+			.media-body{
+				padding-left: 0;
+				padding-top: 50px;
+			}
+		}
+	}
+	.join_conversation .conversation .item, .team_area .conversation .item{
+		height: auto !important;
+	}
+	.services_details{
+		padding-top: 100px;
+		h2{
+			font-size: 25px;
+			line-height: 35px;
+			.theme_btn{
+				float: none;
+				margin-top: 20px;
+				display: block;
+				width: 175px;
+			}
+		} 
+		.features_b h3{ 
+			font-size: 25px;
+			line-height: 35px;
+		}
+	} 
+	.eligibility_criteria_area {
+		.eligibility_criteria{
+			width: 100%;
+			padding-bottom: 0;
+			.eligibility{
+				float: none;
+			}
+		}
+		.required_approval_area{
+			padding-left: 15px;
+			width: 100%;
+			float: none;
+			padding-top: 50px;
+			display: block;
+			overflow: hidden;
+		}
+	}
+	.holidaying{
+		margin-top: 50px;
+	}
+	.types_loan_area{
+		.nav_tabs{
+			padding-bottom: 0;
+			li{
+				margin-bottom: 10px;
+			}
+		} 
+		.tab-content .pr_0{
+			padding-bottom: 30px;
+		}
+	} 
+	.protfolio_details .d_tittle .theme_btn{
+		float: none;
+		margin-top: 20px;
+	}
+	.required_documents .table-responsive{
+		padding-left: 0;
+	}
+	.blog_rightsidebar{
+		padding-top: 80px;
+		
+	}
+	.blog_area .blog_items .blog_heding{
+		font-size: 20px;
+		line-height: 35px;
+	}
+	.blog_single h2{
+		font-size: 20px;
+		line-height: 35px;
+	}
+	.contact_info .info{
+		margin-bottom: 30px;
+	}
+}
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767px) {
+    .header_top_area {
+        padding: 10px 0;
+        position: relative;
+        .top_menu, .right_menu{
+            text-align: center;
+            li{
+                a{
+                    line-height: 30px;
+                }
+                .number{
+                    line-height: 30px;
+                    small{
+                        line-height: 30px;
+                    }
+                }
+            } 
+            .right_nav{
+                float: none;
+                padding-top: 10px; 
+				li.dropdown{
+					padding-right: 0;
+				   .dropdown-menu{
+						left: 20px !important;
+					}
+				}
+            } 
+			
+        }
+    }
+    .main_header_area {
+        top: 100px;
+    }
+	.hta_2{
+		background: $bc;
+	}
+	.tittle h2{
+		padding-bottom: 10px;
+		font-size: 25px;
+		line-height: 35px;
+	}
+	.previous_record_area .projects_done .counter_items{
+		margin-bottom: 40px;
+	}
+	.potential_area{
+		padding-top: 80px;
+	}
+	.testimonial_area{
+		padding-bottom: 80px;
+	}
+	.easy_cash_area{
+		padding: 100px 0; 
+	}
+	.get_started_area{
+		h2{
+			font-size: 25px;
+			line-height: 35px;
+		}
+		p{
+			padding-top: 10px;
+			padding-bottom: 30px;
+		}
+	} 
+	.latest_news_area {
+		padding-bottom: 20px;
+		.latest_news{
+			max-width: 400px;
+			margin: 0 auto 40px;
+		}
+	}
+	.subscirbe_area .subscirbe_inner{
+		padding: 80px 0;
+	}
+	.afa_2 .achieve_inner .personal_tittle p{
+		font-size: 20px;
+		line-height: 35px;
+	}
+	.gla_2{
+		padding-top: 100px;
+	}
+	.banner_area{
+		padding-top: 220px;
+		h2{
+			font-size: 30px;
+			line-height: 45px;
+			padding-bottom: 10px; 
+			&:after{
+				width: 100px;
+			}
+		}
+	}
+	.holidaying{
+		padding: 40px 15px;
+		p{
+			font-size: 18px;
+			line-height: 30px;
+		}
+	}
+	.portfolio_area {
+		.pi_3 .portfolio_item .hover a{
+			font-size: 20px;
+			span{
+				padding-top: 5px;
+			}
+		}
+		.pi_2 .portfolio_item .portfolio_img i:before{
+			top: 10px;
+		}
+		.portfoli_inner .portfolio_item{
+			max-width: 370px;
+			margin: 0 auto 30px;
+		}
+	} 
+	.protfolio_details{
+		.d_tittle h2{
+			font-size: 20px;
+			line-height: 35px;
+		}
+		.heding_p{
+			font-size: 18px;
+			line-height: 30px;
+		}
+	} 
+	.how_it_work .step_m{
+		display: block;
+		padding: 30px 20px 40px;
+		.media-body{
+			padding-left: 0;
+			padding-top: 30px;
+		}
+	}
+	.required_documents .table{
+		width: 700px;
+	}
+	.get_loan_area{
+		padding: 30px 20px;
+		p{
+			font-size: 16px;
+			line-height: 30px;
+			padding-bottom: 20px;
+		}
+	}
+	.testimonial_pages{
+		padding-bottom: 50px;
+	}
+	.team_area{
+		padding-top: 0;
+		padding-bottom: 60px;
+		.conversation .item{
+			max-width: 370px;
+			margin: 0 auto 40px;
+			width: auto;
+		}
+	} 
+	.faq_area .faq_accordion{
+		padding: 40px 15px;
+		.item a{
+			font-size: 16px;
+			line-height: 30px;
+			padding-left: 60px;
+		}
+	} 
+	.blog_area{
+		padding-top: 100px;
+	}
+}
+// Extra small devices (portrait phones, less than 576p) 
+@media (max-width: 575px) {
+    .main_slider_area #main_slider .get_started_btn .theme_btn{
+        min-width: 130px;
+        line-height: 40px !important;
+        font-size: 14px;
+    }
+	.achieve_financial_area{
+		padding-bottom: 80px;
+	}
+	.easy_cash_area .your_results{
+		padding: 30px 20px;
+		.paid{
+			h4{
+				width: 100%;
+				border-bottom: 1px solid #ececec;
+			}
+			.ra{
+				padding-left: 0;
+			}
+		}
+		.progres_area{
+			width: 60%;
+		}
+		.pa_2{
+			width: 40%;
+		}
+	}
+	.pra_2 .previous_right .previous_content .alons_text img {
+		margin-left: 0;
+		margin-top: 20px;
+		display: block;
+	}
+	.banner_area h2{
+		font-size: 25px;
+		line-height: 35px;
+	}
+	.purpose_area .mission .media-body h2{
+		font-size: 20px;
+	}
+	.join_conversation .tittle .theme_btn, .team_area .tittle .theme_btn{
+		float: left;
+		margin-top: 30px;
+	}
+	.accordion_area .faq_accordion .item .heding{
+		font-size: 16px;
+		font-weight: 400;
+		padding: 15px 20px;
+		padding-right: 30px;
+	}
+	.protfolio_details .next_post .theme_btn{
+		font-size: 16px;
+	}
+}
+
+// Extra small devices (portrait phones, less than 360p) 
+@media (max-width: 400px) { 
+    .main_header_area{
+        top: auto;
+    }
+	.hta_2{
+		border-bottom: 1px solid #fff;
+	}
+	.application_process .step_item{
+		padding: 20px;
+	}
+}
+@media (max-width: 360px) {
+	.header_top_area .right_menu .right_nav li.dropdown{
+		padding-left: 20px;
+	}
+} 
+

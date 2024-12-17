@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Card</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+
+  <!-- Credit Card -->
+  <div class="relative text-white rounded-lg w-[90vw] max-w-[600px] h-[50vw] max-h-[400px] overflow-hidden">
+    <!-- Card Background Image -->
+    <img src="/images/card_gold.webp" alt="Credit Card Background" class="absolute inset-0 object-cover w-full h-full">
+
+    <!-- Card Content -->
+    <div class="absolute inset-0 flex flex-col justify-center px-6 py-4 sm:px-8 sm:py-8">
+   
+      <!-- Card Details -->
+      <div class="text-left">
+        <!-- Card Number -->
+        <p class="font-mono text-[8vw] sm:text-[4vw] md:text-[3vw] lg:text-[2.5vw] tracking-widest" id="cardNumber">1234 5678 9012 3456</p>
+
+        <!-- Card Holder and Valid Thru -->
+        <div class="flex justify-between mt-6 text-xs sm:text-base">
+          <div>
+            <p class="uppercase">Card Holder</p>
+            <p class="font-semibold" id="cardName">Your Name</p>
+          </div>
+          <div>
+            <p class="uppercase">Valid Thru</p>
+            <p class="font-semibold" id="cardDate">MM/YY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Additional Section Below -->
+   <div class="w-[90vw] max-w-[600px] mt-8 p-6 rounded-lg shadow-lg bg-white">
+    <!-- Title Section -->
+    <h3 class="flex items-center justify-center mb-4 text-4xl font-bold text-center">
+      <img src="/images/star.png" width="40px" alt="Star Icon" class="mr-2"> 
+      Congratulations 
+      <img src="/images/star.png" width="40px" alt="Star Icon" class="ml-2">
+    </h3>
+  
+    <!-- Subtitle Section -->
+    <p class="m-0 text-base font-medium text-center text-red-500">Your Credit Card Limit</p>
+    <p class="m-0 text-base font-medium text-center text-red-500">110000.00 INR</p>
+  
+    <!-- Description Section -->
+    <p class="mt-4 font-medium text-black">
+      Welcome to PayWorld Card credit card family, India's leading NBFC finance company with more than 2 lakh happy customers across India.
+      Your credit card limit is <span class="text-red-500">110000.00 INR</span> with a return period of <span class="text-red-500">60 days</span> and low interest rates.
+      For your card activation, please make a one-time card-making delivery and processing charge of 999.00 INR. You can use your virtual card after paying these charges.
+      Then, make your card insurance and start using your card. The physical card will be delivered in 3 to 5 working days.
+      Please pay activation charges via the company's QR code shown below, and your card will be ready to use.
+    </p>
+  </div>
+  <div class="w-[90vw] max-w-[600px] mt-8 p-6 rounded-lg shadow-lg bg-white">
+    <h3 class="flex items-center justify-center mb-6 space-x-2 text-3xl font-bold text-center text-black">
+        <!-- Material Icon (Simple) -->
+        <img src="/images/star.png" width="40px" alt="Star Icon" class="mr-2"> 
+        <span>Benefits Of Card</span>
+        <!-- Font Awesome Icon (Solid) -->
+        <i class="text-blue-500 fas fa-gift"></i>
+      </h3>
+    
+    <!-- List of Benefits -->
+    <ul class="space-y-4">
+      <li class="flex items-center text-lg text-gray-700">
+        <span class="mr-3 text-green-500 material-icons">check_circle</span>
+        Get instant 2000 shopping voucher.
+      </li>
+      <li class="flex items-center text-lg text-gray-700">
+        <span class="mr-3 text-yellow-500 material-icons">check_circle</span>
+        Get instant 1000 shopping voucher.
+      </li>
+      <li class="flex items-center text-lg text-gray-700">
+        <span class="mr-3 text-blue-500 material-icons">check_circle</span>
+        Get 2% assured cash back on HP petrol pumps all over India.
+      </li>
+      <li class="flex items-center text-lg text-gray-700">
+        <span class="mr-3 text-red-500 material-icons">check_circle</span>
+        No annual fees and lifetime free.
+      </li>
+      <li class="flex items-center text-lg text-gray-700">
+        <span class="mr-3 text-purple-500 material-icons">check_circle</span>
+        110000 cash withdrawal limit.
+      </li>
+    </ul>
+  </div>
+ 
+  <!-- QR Code Section -->
+  <div class="w-[90vw] max-w-[600px] mt-8 p-6 rounded-lg shadow-lg bg-white">
+  
+    <h3 class="flex items-center justify-center mb-6 space-x-2 text-3xl font-bold text-center text-black">
+        <!-- Material Icon (Simple) -->
+        <img src="/images/star.png" width="40px" alt="Star Icon" class="mr-2">  Activate Your Card <img src="/images/star.png" width="40px" alt="Star Icon" class="mr-2"> 
+       <i class="text-blue-500 fas fa-gift"></i>
+      </h3>
+    
+    <!-- QR Image -->
+    <div class="flex justify-center">
+      <img src="/images/qr.png" alt="QR Code" class="w-full max-w-[300px] h-auto"/>
+    </div>
+    <!-- Instructions for QR Scan -->
+    <p class="mt-4 text-lg text-center text-gray-700">
+      Scan the QR code above to make your payment of ₹999 for card activation. After successful payment, your virtual card will be activated, and You will be re-direct to the Second page
+  </div>
+
+
+</body>
+</html>

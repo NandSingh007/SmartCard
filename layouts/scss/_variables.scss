@@ -1,0 +1,145 @@
+/*font Variables*/  
+$nun: 'Nunito', sans-serif;
+$ssp: 'Source Sans Pro', sans-serif; 
+
+/*Color Variables*/ 
+$bc: #2759ab;
+$hover: #f59019;  
+$pfont: rgba(0, 0, 0, 0.702);
+
+// Mixins
+@mixin transition($property: all, $duration: 300ms, $animate: linear, $delay:0s){
+    transition: $property $duration $animate $delay; 
+}
+
+// Placeholder Mixins
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+/* Bottom to Top key frame*/
+@-webkit-keyframes BottomToTop {
+	49% {
+		-webkit-transform: translateY(-100%);
+	}
+
+	50% {
+		opacity: 0;
+		-webkit-transform: translateY(100%);
+	}
+
+	51% {
+		opacity: 1;
+	}
+}
+@-moz-keyframes BottomToTop {
+    49% {
+        -moz-transform : translateY(-100%);
+        }
+    50% {
+        opacity        : 0;
+        -moz-transform : translateY(100%);
+        }
+    51% {
+        opacity : 1;
+        }
+    }
+@keyframes BottomToTop {
+    49% {
+        transform : translateY(-100%);
+    }
+    50% {
+        opacity   : 0;
+        transform : translateY(100%);
+    }
+    51% {
+        opacity : 1;
+    }
+}
+/* Button Style */
+.theme_btn{ 
+    color: #fff; 
+    background: $bc;
+    text-align: center !important; 
+    font: 600 16px/50px $nun;
+    display: inline-block;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; 
+    z-index: 1; 
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: $hover; 
+        transform-origin: right center; 
+        transform: scale(0, 1); 
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: -1;
+    } 
+    &:hover, &:focus, &.active{   
+        color: #fff !important;
+        &:before{ 
+            transform-origin: left center; 
+            transform: scale(1, 1);
+        }
+    }
+}
+
+/* Tittle */
+.tittle{
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    img{
+        margin-bottom: 30px;
+    }
+    h2{
+        font: 700 40px/50px $nun;
+        color: $hover; 
+        position: relative;
+        padding-bottom: 20px;
+        &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            width: 56px;
+            background: $hover;
+            margin: 0 auto;
+        }
+        span{
+            display: block;
+            color: $bc;
+        }
+    } 
+    &.la{
+        text-align: left;
+        h2::after{
+            margin: 0;
+            right: 0;
+        }
+    }
+}
+/* Preloader */ 
+.preloader{
+    position:fixed;
+    left:0px; 
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:999999;
+    background-color:#ffffff;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-image:url("../images/preloader.gif");  
+}

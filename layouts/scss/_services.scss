@@ -1,0 +1,254 @@
+//services_details
+.services_details{
+	display: block;
+	overflow: hidden;
+	padding-top: 150px; 
+	padding-bottom: 90px;
+	h2{  
+		font: 600 50px/64px $nun;
+		color: $bc;
+		padding-bottom: 40px;
+		
+		.theme_btn{
+			float: right;
+			min-width: 175px;
+			background: $hover;
+			margin-top: 7px;
+			&:before{
+				background: $bc;
+			}
+		} 
+	}
+	p{
+		font-size: 18px;
+		padding-bottom: 60px;
+	}
+	img{
+		max-width: 100%;
+	}
+	.features_b{
+		display: block;
+		overflow: hidden;
+		text-align: center;
+		padding-top: 90px;
+		padding-bottom: 10px;
+		h3{ 
+			font: 600 35px/45px $nun;
+			color: #38393a;
+		}
+		p{
+			margin: 0 auto;
+			max-width: 835px;
+			line-height: 30px;
+			padding-top: 30px;
+		}
+	}
+	.loan{
+		text-align: center;
+		margin-bottom: 30px;
+		i{
+			height: 82px;
+			line-height: 82px;
+			border-radius: 50%;
+			width: 82px;
+			background: #f6f9fe;
+			text-align: center;
+			display: block;
+			color: $bc;
+			margin: 0 auto;
+			@include transition;
+			&:before{
+				font-size: 36px;
+			}
+		}
+		h4{
+			font: 600 18px/28px $nun;
+			color: #38393a;
+			padding-top: 25px;
+		}
+		&:hover, &:focus{
+			i{
+				background: $bc;
+				color: #fff;
+			}
+		}
+	}
+}
+//services_details
+
+//eligibility_criteria_area
+.eligibility_criteria_area{
+	display: block;
+	overflow: hidden;
+	h3{
+		color: #fff;
+		font: 600 28px/35px $nun;
+		padding-bottom: 45px;
+	} 
+	ul{
+		li{
+			padding-left: 60px;
+			position: relative;
+			font: 400 18px/35px $nun;
+			color: #c8dbfa;
+			padding-bottom: 18px;
+			&:before{
+				content: "\f113";
+				position: absolute;
+				left: 0;
+				top: 0;
+				font-family: "Flaticon";
+				color: #fff;
+				font-size: 24px;
+			}
+		}
+	}
+	.end_tittle{
+		padding-left: 60px;
+		padding-top: 55px;
+	}
+	.eligibility_criteria{
+		width: calc(50% - 35px);
+		float: left;
+		background: $bc;
+		padding-top: 70px;
+		padding-bottom: 120px;
+		.eligibility{
+			float: right;
+			max-width: 540px;
+		}
+	}
+	.required_approval_area{
+		width: calc(50% + 35px); 
+		padding-top: 70px;
+		float: right;
+		padding-left: 65px;
+		.required_approval{
+			max-width: 560px;
+			h3{
+				color: $bc;
+				padding-top: 25px;
+			}
+			ul{
+				li{
+					color: #000;
+					&:before{
+						color: $bc;
+					}
+				}
+			}
+		}
+	}
+}
+
+.holidaying{
+	display: block;
+	overflow: hidden;
+	background: #4173c5;
+	padding: 75px 80px;
+	margin-top: -120px;
+	position: relative;
+	z-index: 1;
+	p{
+		color: #fff;
+		font: 600 23px/35px $nun; 
+	}
+	ul{
+		padding: 60px 0;
+		li{
+			font: 600 18px/35px $nun;
+			color: #fff;
+			padding-left: 45px;
+			position: relative;
+			&:before{
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				color: #fff;
+				font: normal normal normal 14px/35px FontAwesome;
+			}
+		}
+	}
+}
+//eligibility_criteria_area
+
+//types_loan
+.types_loan_area{
+	display: block;
+	overflow: hidden;
+	padding: 90px 0 140px;
+	h2{
+		font: 600 35px/45px $nun;
+		color: #38393a;
+		padding-bottom: 55px;
+		text-align: center;
+	}
+	.nav_tabs{
+		border: 0;
+		text-align: center;
+		display: block;
+		padding-bottom: 105px;
+		li{
+			display: inline-block;
+			a{
+				font: 600 18px/30px $nun;
+				border-bottom: 2px solid #fff;
+				margin: 0 18px;
+				&:hover, &:focus, &.active{
+					border-color: $hover;
+				}
+			}
+		}
+	}
+	.tab-content{
+		h3{
+			font: 600 28px/35px $nun;
+			color: #38393a;
+			padding-top: 50px;
+			padding-bottom: 45px;
+		}
+		p{
+			font-family: $nun;
+			font-size: 18px;
+			line-height: 30px;
+			padding-bottom: 60px;
+		}
+		.theme_btn{
+			min-width: 175px;
+		}
+		.fast{
+			background: $hover;
+			margin-right: 27px;
+			&:before{
+				background: $bc;
+			}
+		}
+		.pr_0{
+			padding-right: 0;
+		}
+		img{
+			max-width: 100%;
+		}
+	}
+}
+//types_loan
+
+//interest_rates
+.interest_rates{
+	background: $hover;
+	display: block;
+	overflow: hidden;
+	padding: 110px 0;
+	h4{
+		color: #fff;
+		font: 600 28px/35px $nun;
+		padding-bottom: 40px;
+	}
+	p{
+		font: 400 18px/30px $nun;
+		color: #fff;
+		max-width: 1135px; 
+	}
+}
+//interest_rates

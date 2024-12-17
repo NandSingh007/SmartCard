@@ -1,0 +1,132 @@
+//easy_cash_area
+.easy_cash_area{
+	display: block;
+	overflow: hidden;
+	padding: 165px 0 140px;
+	.tittle{
+		padding-bottom: 85px;
+	}
+	.select_from{
+		margin-bottom: 50px;
+		display: flex;
+		flex-wrap: wrap;
+		h6{
+			display: block;
+			font: 600 18px/30px $nun;
+			color: #151515;
+			padding-bottom: 23px;
+		}
+		.post_select{
+			font: 400 18px/68px $nun;
+			min-width: 100%;
+			width: 100%;
+			&:before{
+				line-height: 68px;
+				font-size: 18px;
+				right: 28px;
+			}
+		}
+	}
+	.your_results{
+		background: #f8f8f8;
+		box-shadow: 0px 0px 40px 0px rgba(204, 208, 215, 0.6);
+		padding: 50px;
+		h3{
+			font: 600 28px/1 $nun;
+			color: #2d2e2e;
+			padding-top: 5px;
+			padding-bottom: 20px;
+		}
+		.paid{
+			display: block;
+			overflow: hidden;
+			h4{
+				font: 600 18px/1 $nun;
+				color: $bc; 
+				float: left;
+				width: calc(100%/2);
+				border-bottom: 1px solid #ececec;
+				padding-bottom: 35px;
+				padding-top: 40px;
+				b{
+					color: $hover;
+					display: block;
+					font-size: 26px;
+					padding-top: 22px;
+				}
+			}
+			.ra{
+				padding-left: 35px;
+			}
+		}
+		.p_b{
+			padding-bottom: 35px;
+			h4{
+				border: 0;
+				b{
+					font-weight: bold;
+					font-size: 46px;
+				}
+			} 
+		}
+		.theme_btn{
+			width: 207px;
+			min-width: 207px;
+			display: block;
+			margin: 0 auto;
+			background: $hover; 
+			margin-bottom: 10px;
+			font-size: 18px;
+			&:before{
+				background: $bc;
+			}
+		}
+		.progres_inner{
+			display: block;
+			overflow: hidden;
+			padding-bottom: 70px;
+		}
+		.progres_area{
+			width: 70%;
+			float: left;
+			padding-right: 10px;
+			h6{
+				color: $pfont;
+				font: 400 14px/1 $nun;
+				padding-bottom: 12px;
+			}
+			span{
+				width: 100%;
+				height: 8px;
+				border-radius: 5px;
+				background: $bc; 
+				position: relative;
+				display: block;
+				&:after{
+					content: "";
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: -10px;
+					margin: 0 auto;
+					height: 10px;
+					width: 1px;
+					background: $bc;
+				}
+			}
+			.text-center{
+				padding-top: 18px;
+			}
+		}
+		.pa_2{
+			width: 30%;
+			span{
+				background: #bcd4fd;
+				&:after{
+					background: #bcd4fd;
+				}
+			}
+		}
+	}
+}
+//easy_cash_area

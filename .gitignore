@@ -1,0 +1,6 @@
+
+static/*.js
+static/*.css
+static/*.map
+.DS_Store
+app.bundle.js.LICENSE.txt

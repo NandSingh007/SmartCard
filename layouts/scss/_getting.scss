@@ -1,0 +1,168 @@
+//getting_loan_area
+.getting_loan_area{
+	display: block;
+	overflow: hidden;
+	padding-top: 80px;
+	.getting_first{
+		padding-top: 70px;
+	}
+	.getting_items{
+		position: relative;
+		padding-left: 80px;
+		z-index: 1;
+		display: block;
+		overflow: hidden;
+		&:before{
+			content: "";
+			position: absolute;
+			left: 24px;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			background: $hover;
+			width: 3px;
+			z-index: -1;
+		}
+		span{ 
+			width: 48px;
+			border-radius: 50%;
+			background: $hover;
+			color: #fff;
+			text-align: center;
+			font: normal normal normal 18px/48px FontAwesome;
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		h3{
+			font: 600 20px/30px $nun;
+			color: $bc;
+			padding-top: 10px; 
+		}
+		P{
+			font-size: 18px;
+			padding-top: 17px;
+			padding-bottom: 55px;
+		}
+		&:first-child, &.gi_f {
+			span, &:before{
+				background: $bc;
+			}
+		}
+		&:last-child{
+			&:before{
+				display: none;
+			}
+		}
+	} 
+	.loan-card{
+		padding-left: 90px;
+		margin-top: -20px;
+	}
+}
+.gla_2{
+	padding-top: 160px;
+	.getting_first{
+		padding-top: 0;
+		.tittle {
+			padding-bottom: 75px;
+		}
+	}
+	.loan-card{
+		padding-left: 0; 
+		padding-top: 100px;
+		img{
+//			max-width: 100%;
+			margin-left: -130px; 
+		}
+	}
+}
+//getting_loan_area
+
+//required_documents
+.required_documents{
+	display: block;
+	overflow: hidden;
+	background: #181a3c;
+	padding: 130px 0 250px;
+	.table-responsive{
+		padding-left: 100px;
+	}
+	.table{
+		margin: 0;
+		thead{  
+			tr{
+				th{
+					border: 0;
+					font: 600 18px/1 $nun;
+					color: #fff;
+					padding: 0;
+					text-align: center;
+					padding-bottom: 70px;
+					&:first-child{
+						text-align: left;
+						font-size: 28px;
+						color: $hover;
+					}
+				}
+			}
+		}
+		tbody{
+			tr{
+				td{
+					border: 0;
+					color: rgba(255, 255, 255, 0.702);
+					padding: 0;
+					font: 600 18px/52px $nun;
+					text-align: center; 
+					&:first-child{
+						text-align: left; 
+					}
+					i{
+						color: #1aa849;
+						font-size: 27px;
+					}
+					.fa-times-circle{
+						color: $hover;
+					}
+				}
+			}
+		}
+	}
+}
+.get_loan_area{
+	margin-top: -160px;
+	background: url("../images/get-oan-bg.jpg") no-repeat center;
+	background-size: cover;
+	padding: 95px 75px;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	&:after{
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(43, 94, 178, 0.702);
+		display: block;
+		z-index: -1;
+	}
+	p{
+		color: #fff;
+		font: 600 28px/45px $nun;
+		padding-bottom: 80px;
+	}
+	.theme_btn{
+		background: $hover;
+		min-width: 234px;
+		text-transform: uppercase;
+		&:before{
+			background: $bc;
+		}
+	}
+}
+//required_documents
+

@@ -1,0 +1,93 @@
+/* ------------------------------------------------------
+@File: Default Styles
+@Author: Themazine.
+@Developed By: Emran Khan
+@Developer URL: http://emran-khan.com
+
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+------------------------------------------------------- */
+
+/* ======================================================
+@Template Name: Alons Html Template 
+@Author: Themazine. 
+@Default Styles
+
+Table of Content: 
+01/ Variables
+02/ Prefix
+03/ Header
+04/ Slider
+05/ Achieve
+06/ Previous 
+07/ Getting
+08/ Testimonial
+09/ Cash
+10/ News
+11/ Form
+12/ Team
+13/ services
+14/ Footer 
+15/ Faq
+16/ Portfolio 
+17/ Responsive   
+
+===================================================== */ 
+
+/*----------------------------------------------------*/
+@import "variables";
+/*----------------------------------------------------*/  
+@import "prefix";
+/*----------------------------------------------------*/ 
+@import "header";
+/*----------------------------------------------------*/  
+@import "slider";
+/*----------------------------------------------------*/  
+@import "achieve";
+/*----------------------------------------------------*/  
+@import "previous";
+/*----------------------------------------------------*/ 
+@import "getting";
+/*----------------------------------------------------*/  
+@import "testimonial";
+/*----------------------------------------------------*/  
+@import "cash";
+/*----------------------------------------------------*/   
+@import "news";
+/*----------------------------------------------------*/   
+@import "form";
+/*----------------------------------------------------*/   
+@import "team";
+/*----------------------------------------------------*/   
+@import "services";
+/*----------------------------------------------------*/  
+@import "faq";
+/*----------------------------------------------------*/ 
+@import "portfolio";   
+/*----------------------------------------------------*/  
+@import "faq";
+/*----------------------------------------------------*/   
+@import "footer"; 
+/*----------------------------------------------------*/  
+@import "responsive";
+/*----------------------------------------------------*/     
+
+/*All CSS call*/
+@import "../css/bootstrap.min.css"; /* Bootstrap CSS */
+/* Icon CSS */
+@import "../css/font-awesome.min.css";   
+@import "../vendors/flat-icon/flaticon.css"; 
+/* Extra Plugins CSS */ 
+@import "../vendors/animate-css/animate.css"; 
+@import "../vendors/owl-carousel/owl.carousel.min.css"; 
+@import "../vendors/bootstrap-selector/nice-select.css"; 
+
+@import "../vendors/magnify-popup/magnific-popup.css"; 
+@import "../vendors/bootstrap-selector/nice-select.css";  
+/* Rev slider css */  
+@import "../vendors/revolution/css/settings.css";
+@import "../vendors/revolution/css/layers.css"; 
+@import "../vendors/revolution/css/navigation.css";    
+/* Font family link */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700,800|Source+Sans+Pro:400,400i,600,700');
