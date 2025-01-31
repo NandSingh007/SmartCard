@@ -151,14 +151,14 @@ app.get("/FirstCard", verifyToken, (req, res) => {
 });
 app.get("/SecondCard", verifyToken, (req, res) => {
   res.render("index", {
-    layout: path.join(__dirname, "/layouts/SecondCard"),
+    layout: path.join(__dirname, "/layouts/secondcard"),
     footer: true
   });
 });
 
 app.get("/ThirdCard", verifyToken, (req, res) => {
   res.render("index", {
-    layout: path.join(__dirname, "/layouts/ThirdCard"),
+    layout: path.join(__dirname, "/layouts/thirdcard"),
     footer: true
   });
 });
