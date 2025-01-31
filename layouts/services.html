@@ -22,6 +22,41 @@
         #howIts {
           color: red !important;
         }
+        .service_box {
+  width: 100%;  /* Ensures the box fits within its container */
+  max-width: 100%;  /* Prevents overflow */
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+  overflow-wrap: break-word; /* Breaks long words */
+}
+@media (max-width: 400px) {
+  .service_box {
+    padding: 10px;
+  }
+
+  .icon img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .service_heading {
+    font-size: 16px;
+  }
+
+  .service_text {
+    font-size: 12px;
+  }
+
+  .row {
+    margin: 0; /* Removes unwanted margins */
+  }
+}
+
             </style>
 </head>
 <body> 
@@ -87,88 +122,78 @@
 	
     <!-- Potential Area -->
     <section class="services_section">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 ">
-                <div class="service_box">
-                    <div class="icon">
-                        <img src="images/reward.webp" alt="Reward">
-                      </div>
-                      <h3 class="service_heading">Reward</h3>
-                      <p class="service_text">
-                        Credit cards with rewards programs offer points, miles, or cashback for every purchase, which can be redeemed for various benefits.
-                      </p>
-                </div>
-             
-            </div>
-            <div class="col-md-4 ">
-                <div class="service_box">
-                    <div class="icon">
-                        <img src="images/case.webp" alt="Cash Back">
-                      </div>
-                      <h3 class="service_heading">Cash Back</h3>
-                      <p class="service_text">
-                        Cashback credit cards provide a percentage of your spending back as cash, making it a straightforward way to earn money on your purchases.
-                      </p>
-                </div>
-             
-            </div>
-            <div class="col-md-4 ">
-                <div class="service_box">
-                    <div class="icon">
-                        <img src="images/balance.webp" alt="Balance Transfer">
-                      </div>
-                      <h3 class="service_heading">Balance Transfer</h3>
-                      <p class="service_text">
-                        Balance transfer credit cards allow you to move existing debt from one card to another with a lower interest rate, helping you save money on interest charges.
-                      </p>
-                </div>
-          
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="service_box">
+              <div class="icon">
+                <img src="images/reward.webp" alt="Reward">
+              </div>
+              <h3 class="service_heading">Reward</h3>
+              <p class="service_text">
+                Credit cards with rewards programs offer points, miles, or cashback for every purchase, which can be redeemed for various benefits.
+              </p>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-4 ">
-                <div class="service_box">
-                    <div class="icon">
-                        <img src="images/worldwide.webp" alt="Travel">
-                      </div>
-                      <h3 class="service_heading">Travel</h3>
-                      <p class="service_text">
-                        Travel credit cards offer perks like airline miles, hotel discounts, and travel insurance to make your journeys more affordable and enjoyable.
-                      </p>
-                </div>
-             
-            
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="service_box">
+              <div class="icon">
+                <img src="images/case.webp" alt="Cash Back">
+              </div>
+              <h3 class="service_heading">Cash Back</h3>
+              <p class="service_text">
+                Cashback credit cards provide a percentage of your spending back as cash, making it a straightforward way to earn money on your purchases.
+              </p>
             </div>
-            <div class="col-md-4 ">
-                <div class="service_box">
-                    <div class="icon">
-                        <img src="images/percentaeg.webp" alt="Zero Percent">
-                      </div>
-                      <h3 class="service_heading">Zero Percent</h3>
-                      <p class="service_text">
-                        Zero percent introductory APR (Annual Percentage Rate) cards offer a promotional period where you won't be charged interest on purchases or balance transfers for a specified time.
-                      </p>
-                </div>
-             
+          </div>
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="service_box">
+              <div class="icon">
+                <img src="images/balance.webp" alt="Balance Transfer">
+              </div>
+              <h3 class="service_heading">Balance Transfer</h3>
+              <p class="service_text">
+                Balance transfer credit cards allow you to move existing debt from one card to another with a lower interest rate, helping you save money on interest charges.
+              </p>
             </div>
-            <div class="col-md-4 ">
-                <div class="service_box">
-                    <div class="icon">
-                        <img src="images/intrest.webp" alt="Low Interest">
-                      </div>
-                      <h3 class="service_heading">Low Interest</h3>
-                      <p class="service_text">
-                        Low-interest credit cards have a reduced APR, making them ideal for carrying a balance without accruing excessive interest charges.
-                      </p>
-                </div>
-             
-             
+          </div>
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="service_box">
+              <div class="icon">
+                <img src="images/worldwide.webp" alt="Travel">
+              </div>
+              <h3 class="service_heading">Travel</h3>
+              <p class="service_text">
+                Travel credit cards offer perks like airline miles, hotel discounts, and travel insurance to make your journeys more affordable and enjoyable.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="service_box">
+              <div class="icon">
+                <img src="images/percentaeg.webp" alt="Zero Percent">
+              </div>
+              <h3 class="service_heading">Zero Percent</h3>
+              <p class="service_text">
+                Zero percent introductory APR (Annual Percentage Rate) cards offer a promotional period where you won't be charged interest on purchases or balance transfers for a specified time.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="service_box">
+              <div class="icon">
+                <img src="images/intrest.webp" alt="Low Interest">
+              </div>
+              <h3 class="service_heading">Low Interest</h3>
+              <p class="service_text">
+                Low-interest credit cards have a reduced APR, making them ideal for carrying a balance without accruing excessive interest charges.
+              </p>
             </div>
           </div>
         </div>
-      </section>
-      
+      </div>
+    </section>
+    
     <!-- Potential Area -->
     
 	<!-- Get started -->
@@ -203,8 +228,8 @@
             <div class="footer_inner row"> 
                 <!-- Logo and Copyright Section -->
                 <div class="col-xl-4 col-md-5 col-sm-7 footer_logo wow fadeIn">
-                    <a href="index.html"><img src="images/mlogo.webp" width="120px" alt="SmartCard Logo"></a>  
-                    <p>SmartCard. All rights reserved</p> 
+                  <a href="index.html"> <img src="images/Smart_PayCard__1_-removebg-preview.png" width="70px"  alt=""></a>  
+                  <p>SmartCard. All rights reserved</p> 
                     <ul class="footer_social">
                         <li><a href="#" class="fab fa-facebook"></a></li>
                         <li><a href="#" class="fab fa-twitter"></a></li>
