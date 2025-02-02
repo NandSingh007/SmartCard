@@ -30,9 +30,9 @@ const { default: mongoose } = require("mongoose");
 const verifyToken = require("./middleware/verifyToken");
 const app = express();
 // Static Files
-// app.use(express.static(path.join(__dirname, "/static")));
+app.use("/static", express.static(path.join(__dirname, "/static")));
 
-app.use(express.static(path.join(__dirname, "/static")));
+// app.use(express.static(path.join(__dirname, "/static")));
 
 app.use(express.static(path.join(__dirname, "layouts")));
 // Middleware to parse JSON bodies
