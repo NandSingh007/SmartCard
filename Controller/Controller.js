@@ -240,7 +240,7 @@ exports.identityUserData = async (req, res) => {
     }
 
     // Combine both collections' data into a single array
-    const userData = identityUserData.map((identity) => {
+    const dataa = identityUserData.map((identity) => {
       // Match and merge the corresponding registration data
       const registration = registrationData.find(
         (reg) => reg._id.toString() === identity.UserId.toString()
@@ -250,6 +250,7 @@ exports.identityUserData = async (req, res) => {
         ...registration
       };
     });
+    const userData = dataa.reverse();
 
     // console.log(userData, "userData");
 

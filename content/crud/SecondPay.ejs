@@ -204,7 +204,7 @@
     try {
         const response = await fetch('https://smartpaycard.in/identityUserData'); // Replace with your API URL
         const data = await response.json();
-    
+    // console.log(data,"data")
         // Call function to populate the table with data
         populateTable(data.userData);
     } catch (error) {
