@@ -471,9 +471,9 @@ if (cardDate) {
           if (FirstPayStatus === 0 && SecondPayStatus === 0) {
             console.log("User stays on this page.");
           } else if (FirstPayStatus === 1 && SecondPayStatus === 0) {
-            window.location.href = "Secondcard.html";
+            window.location.href = "secondcard.html";
           } else if (FirstPayStatus === 1 && SecondPayStatus === 1) {
-            window.location.href = "ThirdCard.html";
+            window.location.href = "thirdcard.html";
           }
         } else {
           console.error("Error fetching statuses:", data.message);

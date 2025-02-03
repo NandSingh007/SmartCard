@@ -279,6 +279,10 @@
           <p class="font-semibold" id="cardName">Your Name</p>
         </div>
         <div>
+          <p class="text-xs uppercase sm:text-sm lg:text-base">CVV</p>
+          <p class="font-semibold" id="cardCvv">Your Name</p>
+        </div>
+        <div>
           <p class="text-xs uppercase sm:text-sm lg:text-base">Valid Thru</p>
           <p class="font-semibold" id="cardDate">MM/YY</p>
         </div>
@@ -338,13 +342,18 @@ if (cardDate) {
       const nameFieldMobile = document.getElementById("nameFieldMobile");
       const amountFieldMobile = document.getElementById("amountFieldMobile");
       const cardNumber =document.getElementById("cardNumber");
-
+      const cvv = document.getElementById('cardCvv')
+ 
 if (number) {
   const rawNumber = `15${number}9292`; // Original number
   const formattedNumber = rawNumber.replace(/(\d{4})(?=\d)/g, "$1 "); // Group into 4 digits separated by spaces
   cardNumber.textContent = formattedNumber.trim(); // Update the content with the formatted number
+  const lastThreeDigits = number.toString().slice(-3); // Extracts the last 3 digits of the number
+  cvv.textContent = lastThreeDigits;
+  
 }
 
+  
 const cardName =document.getElementById("cardName");
   if(name)
 {cardName.textContent =name
