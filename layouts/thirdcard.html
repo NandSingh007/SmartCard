@@ -227,7 +227,7 @@
       <table class="w-full border border-separate border-gray-300 rounded-md table-auto border-spacing-0">
         <thead>
           <tr class="bg-gray-100">
-            <th class="px-4 py-3 text-lg text-red-600 border-b">Bank Name</th>
+            <!-- <th class="px-4 py-3 text-lg text-red-600 border-b">Bank Name</th> -->
             <th class="px-4 py-3 text-lg text-red-600 border-b">Customer Name</th>
             <th class="px-4 py-3 text-lg text-red-600 border-b">Policy Name</th>
             <th class="px-4 py-3 text-lg text-red-600 border-b">Card Number</th>
@@ -237,12 +237,12 @@
         </thead>
         <tbody>
           <tr class="hover:bg-gray-50">
-            <td class="px-4 py-2 text-center border-b">ABC Bank</td>
-            <td class="px-4 py-2 text-center border-b">John Doe</td>
-            <td class="px-4 py-2 text-center border-b">Life Insurance</td>
-            <td class="px-4 py-2 text-center border-b">1234 5678 9012 3456</td>
-            <td class="px-4 py-2 text-center border-b">123456</td>
-            <td class="px-4 py-2 text-center border-b">2024-2026</td>
+            <!-- <td class="px-4 py-2 text-center border-b">ABC Bank</td> -->
+            <td class="px-4 py-2 text-center border-b" id="userName">John Doe</td>
+            <td class="px-4 py-2 text-center border-b" >Life Insurance</td>
+            <td class="px-4 py-2 text-center border-b" id="cardNu">1234 5678 9012 3456</td>
+            <td class="px-4 py-2 text-center border-b" id="customerIdd">123456</td>
+            <td class="px-4 py-2 text-center border-b">2025-2029</td>
           </tr>
         </tbody>
       </table>
@@ -341,6 +341,9 @@ if (cardDate) {
       const amountFieldDesktop = document.getElementById("amountField");
       const nameFieldMobile = document.getElementById("nameFieldMobile");
       const amountFieldMobile = document.getElementById("amountFieldMobile");
+      const userName = document.getElementById("userName");
+      const cardNu = document.getElementById("cardNu");
+      const customerIdd = document.getElementById("customerIdd");
       const cardNumber =document.getElementById("cardNumber");
       const cvv = document.getElementById('cardCvv')
  
@@ -350,6 +353,8 @@ if (number) {
   cardNumber.textContent = formattedNumber.trim(); // Update the content with the formatted number
   const lastThreeDigits = number.toString().slice(-3); // Extracts the last 3 digits of the number
   cvv.textContent = lastThreeDigits;
+  customerIdd.textContent = number.toString().slice(5);
+  cardNu.textContent= formattedNumber.trim();
   
 }
 
@@ -359,6 +364,8 @@ const cardName =document.getElementById("cardName");
 {cardName.textContent =name
    
 }
+ if(userName) userName.textContent=name;
+
       if (nameFieldDesktop) nameFieldDesktop.textContent = name;
       if (amountFieldDesktop) amountFieldDesktop.textContent = `₹ ${cardamount}`;
       if (nameFieldMobile) nameFieldMobile.textContent = name;
