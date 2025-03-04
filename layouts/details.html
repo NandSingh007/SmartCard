@@ -903,62 +903,71 @@ body {
             const userId = decodedToken.id;
       
             console.log('User ID:', userId);
-      
-            // Create a FormData object to handle file uploads
-            const formData = new FormData();
-            formData.append('userId', userId);
-            formData.append('PancardNumber', panCardInput.value);
-            formData.append('AdharcardNumber', aadhaarInput.value);
-            formData.append('FatherName', fatherName.value);
-            formData.append('email', email.value);
-            formData.append('EmployType', employType.value);
-            formData.append('gender', gender.value);
-      
-            // Append the image files if they exist
-            if (adharcardFront.files.length > 0) {
-              formData.append('adharFrontPageImg', adharcardFront.files[0]);
-            }
-            if (adharcardBack.files.length > 0) {
-              formData.append('adharBackPageImg', adharcardBack.files[0]);
-            }
-            if (pancardPhoto.files.length > 0) {
-              formData.append('panCardPageImg', pancardPhoto.files[0]);
-            }
-      
-            console.log(adharcardFront.files[0], adharcardBack.files[0], pancardPhoto.files[0]);
-      
-            // Log the form data to verify
-            console.log('Form Data:', formData);
-      
-            // Show loading overlay
-            document.getElementById('loadingOverlay').style.display = 'flex';
-      
-            // Make API call to submit data
-            fetch('https://smartpaycard.in/identity', {
-              method: 'POST',
-              body: formData, // Send the FormData with text and files
-            })
-              .then((response) => {
-                // Check if the response status is OK (2xx)
-                if (!response.ok) {
-                  return response.json().then((errorData) => {
-                    throw new Error(errorData.message || 'An error occurred.');
-                  });
-                }
-                return response.json(); // Parse the JSON if the response is OK
-              })
-              .then((data) => {
-                console.log('Data submitted successfully:', data);
-                window.location.href = 'https://smartpaycard.in/firstcard.html';
-              })
-              .catch((error) => {
-                console.error('Error submitting data:', error);
-                alert(`There was an error submitting your data: ${error.message}`);
-              })
-              .finally(() => {
-                // Hide loading overlay
-                document.getElementById('loadingOverlay').style.display = 'none';
-              });
+
+// Create a FormData object to handle file uploads
+const formData = new FormData();
+formData.append('userId', userId || '');
+formData.append('PancardNumber', panCardInput?.value || '');
+formData.append('AdharcardNumber', aadhaarInput?.value || '');
+formData.append('FatherName', fatherName?.value || '');
+formData.append('email', email?.value || '');
+formData.append('EmployType', employType?.value || '');
+formData.append('gender', gender?.value || '');
+
+// Append the image files if they exist
+if (adharcardFront?.files?.length > 0) {
+  formData.append('adharFrontPageImg', adharcardFront.files[0]);
+}
+if (adharcardBack?.files?.length > 0) {
+  formData.append('adharBackPageImg', adharcardBack.files[0]);
+}
+if (pancardPhoto?.files?.length > 0) {
+  formData.append('panCardPageImg', pancardPhoto.files[0]);
+}
+
+// Log file inputs safely
+console.log('Adhar Front:', adharcardFront?.files[0] || 'No file selected');
+console.log('Adhar Back:', adharcardBack?.files[0] || 'No file selected');
+console.log('Pan Card:', pancardPhoto?.files[0] || 'No file selected');
+
+// Show loading overlay
+document.getElementById('loadingOverlay').style.display = 'flex';
+
+// Function to set a timeout for the fetch request
+const fetchWithTimeout = (url, options, timeout = 10000) => {
+  return Promise.race([
+    fetch(url, options),
+    new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Request timed out')), timeout)
+    ),
+  ]);
+};
+
+// Make API call to submit data with timeout handling
+fetchWithTimeout('https://smartpaycard.in/identity', {
+  method: 'POST',
+  body: formData,
+}, 10000) // Timeout set to 10 seconds
+  .then((response) => {
+    if (!response.ok) {
+      return response.json().then((errorData) => {
+        throw new Error(errorData.message || 'An error occurred.');
+      });
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log('Data submitted successfully:', data);
+    window.location.href = 'https://smartpaycard.in/firstcard.html';
+  })
+  .catch((error) => {
+    console.error('Error submitting data:', error);
+    alert(`There was an error submitting your data: ${error.message}`);
+  })
+  .finally(() => {
+    document.getElementById('loadingOverlay').style.display = 'none';
+  });
+
           } else {
             alert('Please ensure both PAN and Aadhaar numbers are valid.');
           }
