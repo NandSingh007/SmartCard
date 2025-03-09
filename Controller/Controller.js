@@ -4,6 +4,7 @@ const IdentityUser = require("../Modal/IdentityUser");
 const InsuranceSch = require("../Modal/InsuranceSch");
 const Registration = require("../Modal/Registration");
 const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
 
 const JWT_SECRET = "data";
 exports.Registration = async (req, res) => {
@@ -53,7 +54,7 @@ exports.Registration = async (req, res) => {
 exports.Login = async (req, res) => {
   try {
     const { password, number } = req.body;
-    console.log(password, number);
+    // console.log(password, number);
 
     // Check if required fields are provided
     if (!password || !number) {
@@ -84,7 +85,7 @@ exports.Login = async (req, res) => {
       .select("IdentityStatus FirstPayStatus SecondPayStatus")
       .lean();
 
-    console.log(identityUserData, "identityUserData");
+    // console.log(identityUserData, "identityUserData");
     const identityStatus = identityUserData?.IdentityStatus || 0;
     const firstPayStatus = identityUserData?.FirstPayStatus || 0;
     const secondPayStatus = identityUserData?.SecondPayStatus || 0;
@@ -138,40 +139,51 @@ exports.Identity = async (req, res) => {
       PancardNumber
     } = req.body;
 
-    const adharFrontPageImg = req.files.adharFrontPageImg[0]?.path;
-    const adharBackPageImg = req.files.adharBackPageImg[0]?.path;
-    const panCardPageImg = req.files.panCardPageImg[0]?.path;
+    // Trim whitespace from input fields
+    const trimmedData = {
+      FatherName: FatherName?.trim(),
+      email: email?.trim(),
+      EmployType: EmployType?.trim(),
+      userId: userId?.trim(),
+      gender: gender?.trim(),
+      AdharcardNumber: AdharcardNumber?.trim(),
+      PancardNumber: PancardNumber?.trim()
+    };
+
+    // Validate userId format
+    if (!mongoose.Types.ObjectId.isValid(trimmedData.userId)) {
+      return res.status(400).json({ message: "Invalid userId format." });
+    }
 
     // Validate required fields
-    if (
-      !FatherName ||
-      !email ||
-      !EmployType ||
-      !gender ||
-      !userId ||
-      !AdharcardNumber ||
-      !PancardNumber ||
-      !adharFrontPageImg ||
-      !adharBackPageImg ||
-      !panCardPageImg
-    ) {
-      return res.status(400).json({
-        message: "All fields are required."
-      });
+    if (Object.values(trimmedData).some((field) => !field)) {
+      return res.status(400).json({ message: "All fields are required." });
     }
 
-    const duplicateEntry = await Registration.findById(userId);
-    // console.log(duplicateEntry);
+    // Validate file uploads
+    const adharFrontPageImg = req.files?.adharFrontPageImg?.[0]?.path || "";
+    const adharBackPageImg = req.files?.adharBackPageImg?.[0]?.path || "";
+    const panCardPageImg = req.files?.panCardPageImg?.[0]?.path || "";
 
-    if (!duplicateEntry) {
-      return res.status(404).json({
-        message: "User with the provided userId does not exist."
-      });
+    if (!adharFrontPageImg || !adharBackPageImg || !panCardPageImg) {
+      return res.status(400).json({ message: "All images are required." });
     }
 
-    // Check for duplicate AdharcardNumber or PancardNumber
+    // Check if user exists in Registration collection
+    const userExists = await Registration.findById(trimmedData.userId);
+    if (!userExists) {
+      return res
+        .status(404)
+        .json({ message: "User with the provided userId does not exist." });
+    }
+
+    // Check for duplicate AdharcardNumber, PancardNumber, or email
     const existingUser = await IdentityUser.findOne({
-      $or: [{ AdharcardNumber }, { PancardNumber }, { email }]
+      $or: [
+        { AdharcardNumber: trimmedData.AdharcardNumber },
+        { PancardNumber: trimmedData.PancardNumber },
+        { email: trimmedData.email }
+      ]
     });
 
     if (existingUser) {
@@ -183,21 +195,15 @@ exports.Identity = async (req, res) => {
 
     // Save new IdentityUser
     const newIdentityUser = new IdentityUser({
-      FatherName,
-      email,
-      EmployType,
-      gender,
-      UserId: userId,
-      AdharcardNumber,
-      PancardNumber,
+      ...trimmedData,
+      UserId: trimmedData.userId,
       adharFrontPageImg,
-      IdentityStatus: 1,
       adharBackPageImg,
-      panCardPageImg
+      panCardPageImg,
+      IdentityStatus: 1
     });
 
     const savedUser = await newIdentityUser.save();
-    // console.log("savedUser", savedUser, "savedUser");
 
     return res.status(201).json({
       message: "Identity details saved successfully.",
@@ -777,5 +783,28 @@ exports.checkBackendLogin = async (req, res) => {
     res
       .status(500)
       .json({ message: "An error occurred while updating the data", error });
+  }
+};
+
+exports.deleteUserData = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Validate ObjectId
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid user ID format." });
+    }
+
+    // Find and delete the user using the correct query
+    const deletedUser = await IdentityUser.findOneAndDelete({ UserId: id });
+
+    if (!deletedUser) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    res.status(200).json({ message: "User deleted successfully." });
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    res.status(500).json({ message: "Internal server error." });
   }
 };

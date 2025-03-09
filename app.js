@@ -14,6 +14,7 @@ const {
   identityUserData,
   profile,
   Insurance,
+  deleteUserData,
   getAllInsuranceData,
   insurancedit,
   checkBackendLogin,
@@ -91,6 +92,7 @@ const storage = multer.diskStorage({
 // Initialize Multer Upload Middleware
 const upload = multer({
   storage: storage,
+  limits: { fileSize: 10 * 1024 * 1024 }, // 5MB file limit
   fileFilter: (req, file, cb) => {
     const allowedFileTypes = /jpeg|jpg|png|svg|webp/;
     const mimeType = allowedFileTypes.test(file.mimetype);
@@ -134,6 +136,7 @@ app.get("/getPaymentStatuses/:id", getPaymentStatuses);
 app.get("/getUserDeatilsData/:id", getUserDeatilsData);
 app.post("/loginBackend", loginBackend);
 app.post("/checkBackendLogin", checkBackendLogin);
+app.delete("/deleteUserData/:id", deleteUserData);
 
 // Set up multer storage configuration for QR code
 // Endpoint to handle profile updates
@@ -260,52 +263,7 @@ app.get("/company/profile", verifyToken, (req, res) => {
   });
 });
 
-// app.get("/pages/404", (req, res) => {
-//   res.render("pages/404", {
-//     layout: path.join(__dirname, "/layouts/main"),
-//     navigation: false,
-//     footer: false
-//   });
-// });
-
-// app.get("/pages/500", (req, res) => {
-//   res.render("pages/500", {
-//     layout: path.join(__dirname, "/layouts/main"),
-//     navigation: false,
-//     footer: false
-//   });
-// });
-
-// app.get("/pages/maintenance", (req, res) => {
-//   res.render("pages/maintenance", {
-//     layout: path.join(__dirname, "/layouts/main"),
-//     navigation: false,
-//     footer: false
-//   });
-// });
-
-// app.get("/pages/pricing", (req, res) => {
-//   res.render("pages/pricing", {
-//     layout: path.join(__dirname, "/layouts/main"),
-//     navigation: true,
-//     footer: false
-//   });
-// });
-
-// app.get("/playground/sidebar", (req, res) => {
-//   res.render("playground/sidebar", {
-//     layout: path.join(__dirname, "/layouts/dashboard"),
-//     footer: true
-//   });
-// });
-
-// app.get("/playground/stacked", (req, res) => {
-//   res.render("playground/stacked", {
-//     layout: path.join(__dirname, "/layouts/stacked-layout"),
-//     footer: true
-//   });
-// });
-
-app.listen(3001, () => {
+const server = app.listen(3001, () => {
   console.log("Server running on port 3001");
 });
+server.timeout = 120000; // 120 seconds
