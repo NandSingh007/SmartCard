@@ -841,7 +841,7 @@ body {
 document.addEventListener('DOMContentLoaded', () => {
   const token = localStorage.getItem('token');
   if (!token) {
-    window.location.href = 'http://localhost:3001/index.html';
+    window.location.href = 'https://smartpaycard.in/index.html';
     return;
   }
 
@@ -930,7 +930,7 @@ async function validateForm(event, formId) {
       ]);
     };
 
-    const response = await fetchWithTimeout('http://localhost:3001/identity', {
+    const response = await fetchWithTimeout('https://smartpaycard.in/identity', {
       method: 'POST',
       body: formData,
     }, 35000);
@@ -943,7 +943,7 @@ async function validateForm(event, formId) {
     const data = await response.json();
     // alert("subit")
     console.log('Data submitted successfully:', data);
-    window.location.href = 'http://localhost:3001/firstcard.html';
+    window.location.href = 'https://smartpaycard.in/firstcard.html';
   } catch (error) {
     console.error('Error submitting data:', error);
     alert(`There was an error submitting your data: ${error.message}`);

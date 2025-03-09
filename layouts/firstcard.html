@@ -387,7 +387,7 @@ if (cardDate) {
 
     if (!userId) return;
 
-    const response = await fetch(`http://localhost:3001/getUserDeatilsData/${userId}`, {
+    const response = await fetch(`https://smartpaycard.in/getUserDeatilsData/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -453,7 +453,7 @@ if (cardDate) {
         const userId = decodedToken.id;
 
         // Call API to get payment statuses, sending `id` as a query parameter
-        const response = await fetch(`http://localhost:3001/getPaymentStatuses/${userId}`, {
+        const response = await fetch(`https://smartpaycard.in/getPaymentStatuses/${userId}`, {
   method: "GET",
   headers: {
     Authorization: `Bearer ${token}`, // Add token to headers if required
@@ -495,7 +495,7 @@ if (cardDate) {
     try {
     
 
-      const response = await fetch("http://localhost:3001/getProfile");
+      const response = await fetch("https://smartpaycard.in/getProfile");
 
 if (!response.ok) {
   throw new Error("Failed to fetch company profile");

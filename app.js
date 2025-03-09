@@ -220,7 +220,7 @@ app.get("/crud/user/:id", async (req, res) => {
     const userId = req.params.id;
     // Fetch user data from API
     const response = await axios.get(
-      `http://localhost:3001/getUserDeatilsData/${userId}`
+      `https://smartpaycard.in/getUserDeatilsData/${userId}`
     );
     // console.log(response.data);
     const user = response.data.userData;

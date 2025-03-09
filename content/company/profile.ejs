@@ -75,7 +75,7 @@
 <script>
   async function fetchCompanyProfile() {
     try {
-      const response = await fetch("http://localhost:3001/getprofile");
+      const response = await fetch("https://smartpaycard.in/getprofile");
       if (!response.ok) {
         throw new Error("Failed to fetch company profile");
       }
@@ -95,8 +95,8 @@
       const qrCodeElement = document.getElementById("qrCodeDisplay");
       if (profile.QRImg) {
         // alert(profile.QRImg)
-        // qrCodeElement.src = `http://localhost:3001/${profile.QRImg}`;
-        qrCodeElement.src = `http://localhost:3001/uploads/${profile.QRImg}`;
+        // qrCodeElement.src = `https://smartpaycard.in/${profile.QRImg}`;
+        qrCodeElement.src = `https://smartpaycard.in/uploads/${profile.QRImg}`;
 
         qrCodeElement.style.display = "block";
       } else {
@@ -217,7 +217,7 @@ async function saveChanges() {
 
     // Send data to the profile API endpoint
     try {
-        const response = await fetch('http://localhost:3001/profile', {
+        const response = await fetch('https://smartpaycard.in/profile', {
             method: 'POST',
             body: formData,
         });

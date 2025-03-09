@@ -939,7 +939,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
         }
   
         // Fetch user details from the API
-        const response = await fetch(`http://localhost:3001/getUserDeatilsData/${userId}`, {
+        const response = await fetch(`https://smartpaycard.in/getUserDeatilsData/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
