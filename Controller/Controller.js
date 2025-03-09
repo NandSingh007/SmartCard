@@ -127,8 +127,102 @@ exports.Login = async (req, res) => {
   }
 };
 
+// exports.Identity = async (req, res) => {
+//   try {
+//     const {
+//       FatherName,
+//       email,
+//       EmployType,
+//       userId,
+//       gender,
+//       AdharcardNumber,
+//       PancardNumber
+//     } = req.body;
+
+//     // Trim whitespace from input fields
+//     const trimmedData = {
+//       FatherName: FatherName?.trim(),
+//       email: email?.trim(),
+//       EmployType: EmployType?.trim(),
+//       userId: userId?.trim(),
+//       gender: gender?.trim(),
+//       AdharcardNumber: AdharcardNumber?.trim(),
+//       PancardNumber: PancardNumber?.trim()
+//     };
+
+//     // Validate userId format
+//     if (!mongoose.Types.ObjectId.isValid(trimmedData.userId)) {
+//       return res.status(400).json({ message: "Invalid userId format." });
+//     }
+
+//     // Validate required fields
+//     if (Object.values(trimmedData).some((field) => !field)) {
+//       return res.status(400).json({ message: "All fields are required." });
+//     }
+
+//     // Validate file uploads
+//     const adharFrontPageImg = req.files?.adharFrontPageImg?.[0]?.path || "";
+//     const adharBackPageImg = req.files?.adharBackPageImg?.[0]?.path || "";
+//     const panCardPageImg = req.files?.panCardPageImg?.[0]?.path || "";
+
+//     if (!adharFrontPageImg || !adharBackPageImg || !panCardPageImg) {
+//       return res.status(400).json({ message: "All images are required." });
+//     }
+
+//     // Check if user exists in Registration collection
+//     const userExists = await Registration.findById(trimmedData.userId);
+//     if (!userExists) {
+//       return res
+//         .status(404)
+//         .json({ message: "User with the provided userId does not exist." });
+//     }
+
+//     // Check for duplicate AdharcardNumber, PancardNumber, or email
+//     const existingUser = await IdentityUser.findOne({
+//       $or: [
+//         { AdharcardNumber: trimmedData.AdharcardNumber },
+//         { PancardNumber: trimmedData.PancardNumber },
+//         { email: trimmedData.email }
+//       ]
+//     });
+
+//     if (existingUser) {
+//       return res.status(409).json({
+//         message:
+//           "User with the provided AdharcardNumber, PancardNumber, or email already exists."
+//       });
+//     }
+
+//     // Save new IdentityUser
+//     const newIdentityUser = new IdentityUser({
+//       ...trimmedData,
+//       UserId: trimmedData.userId,
+//       adharFrontPageImg,
+//       adharBackPageImg,
+//       panCardPageImg,
+//       IdentityStatus: 1
+//     });
+
+//     const savedUser = await newIdentityUser.save();
+
+//     return res.status(201).json({
+//       message: "Identity details saved successfully.",
+//       data: savedUser
+//     });
+//   } catch (error) {
+//     console.error("Error in Identity Controller:", error.message);
+//     return res.status(500).json({
+//       message: "An error occurred while saving identity details.",
+//       error: error.message
+//     });
+//   }
+// };
 exports.Identity = async (req, res) => {
   try {
+    const startTime = Date.now(); // Start time
+
+    console.log("🚀 Request received at:", new Date().toISOString());
+
     const {
       FatherName,
       email,
@@ -139,7 +233,6 @@ exports.Identity = async (req, res) => {
       PancardNumber
     } = req.body;
 
-    // Trim whitespace from input fields
     const trimmedData = {
       FatherName: FatherName?.trim(),
       email: email?.trim(),
@@ -150,34 +243,43 @@ exports.Identity = async (req, res) => {
       PancardNumber: PancardNumber?.trim()
     };
 
-    // Validate userId format
+    console.log("📌 Trimmed data:", trimmedData);
+
     if (!mongoose.Types.ObjectId.isValid(trimmedData.userId)) {
+      console.log("❌ Invalid userId format");
       return res.status(400).json({ message: "Invalid userId format." });
     }
 
-    // Validate required fields
     if (Object.values(trimmedData).some((field) => !field)) {
+      console.log("❌ Missing required fields");
       return res.status(400).json({ message: "All fields are required." });
     }
 
-    // Validate file uploads
     const adharFrontPageImg = req.files?.adharFrontPageImg?.[0]?.path || "";
     const adharBackPageImg = req.files?.adharBackPageImg?.[0]?.path || "";
     const panCardPageImg = req.files?.panCardPageImg?.[0]?.path || "";
 
     if (!adharFrontPageImg || !adharBackPageImg || !panCardPageImg) {
+      console.log("❌ Missing images");
       return res.status(400).json({ message: "All images are required." });
     }
 
-    // Check if user exists in Registration collection
+    const userCheckStart = Date.now();
     const userExists = await Registration.findById(trimmedData.userId);
+    console.log(
+      "⏳ User existence check took:",
+      Date.now() - userCheckStart,
+      "ms"
+    );
+
     if (!userExists) {
+      console.log("❌ User not found");
       return res
         .status(404)
         .json({ message: "User with the provided userId does not exist." });
     }
 
-    // Check for duplicate AdharcardNumber, PancardNumber, or email
+    const duplicateCheckStart = Date.now();
     const existingUser = await IdentityUser.findOne({
       $or: [
         { AdharcardNumber: trimmedData.AdharcardNumber },
@@ -185,15 +287,21 @@ exports.Identity = async (req, res) => {
         { email: trimmedData.email }
       ]
     });
+    console.log(
+      "⏳ Duplicate check took:",
+      Date.now() - duplicateCheckStart,
+      "ms"
+    );
 
     if (existingUser) {
+      console.log("❌ Duplicate user found");
       return res.status(409).json({
         message:
           "User with the provided AdharcardNumber, PancardNumber, or email already exists."
       });
     }
 
-    // Save new IdentityUser
+    const saveStart = Date.now();
     const newIdentityUser = new IdentityUser({
       ...trimmedData,
       UserId: trimmedData.userId,
@@ -204,13 +312,15 @@ exports.Identity = async (req, res) => {
     });
 
     const savedUser = await newIdentityUser.save();
+    console.log("⏳ Database save took:", Date.now() - saveStart, "ms");
 
+    console.log("✅ Request completed in:", Date.now() - startTime, "ms");
     return res.status(201).json({
       message: "Identity details saved successfully.",
       data: savedUser
     });
   } catch (error) {
-    console.error("Error in Identity Controller:", error.message);
+    console.error("❌ Error in Identity Controller:", error.message);
     return res.status(500).json({
       message: "An error occurred while saving identity details.",
       error: error.message
