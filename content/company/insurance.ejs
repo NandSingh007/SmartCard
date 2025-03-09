@@ -130,7 +130,7 @@ async function submitField() {
 
   // Send data to the backend
   try {
-    const response = await fetch("https://smartpaycard.in/Insurance", {
+    const response = await fetch("http://localhost:3001/Insurance", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -163,7 +163,7 @@ async function submitField() {
   // Function to fetch and display insurance data
   async function fetchInsuranceData() {
     try {
-      const response = await fetch("https://smartpaycard.in/getAllInsuranceData");
+      const response = await fetch("http://localhost:3001/getAllInsuranceData");
       if (!response.ok) {
         throw new Error("Failed to fetch insurance data");
       }
@@ -220,7 +220,7 @@ async function submitField() {
     }
 
     try {
-      const response = await fetch(`https://smartpaycard.in/insurancedit`, {
+      const response = await fetch(`http://localhost:3001/insurancedit`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ bankName, amount ,editRowId}),

@@ -59,11 +59,11 @@ mongoose
   );
 
 // router for frontend
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // Limit each IP to 100 requests per windowMs
-});
-app.use(limiter);
+// const limiter = rateLimit({
+//   windowMs: 15 * 60 * 1000, // 15 minutes
+//   max: 100 // Limit each IP to 100 requests per windowMs
+// });
+// app.use(limiter);
 // Set Templating Engine
 app
   .use(expressLayouts)
@@ -72,6 +72,14 @@ app
 
 // api handler
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+app.use((req, res, next) => {
+  req.setTimeout(120000, () => {
+    console.log("Request timed out");
+    res.status(408).json({ error: "Request timed out" });
+  });
+  next();
+});
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -112,7 +120,6 @@ const upload = multer({
 // Identity Route
 app.post(
   "/identity",
-  limiter, // Apply rate limiting middleware
   upload.fields([
     // Multer file handling middleware
     { name: "adharFrontPageImg", maxCount: 1 },
@@ -122,8 +129,8 @@ app.post(
   Identity // Your Identity Controller to handle the request and response
 );
 
-app.post("/registration", limiter, Registration);
-app.post("/login", limiter, Login); // Assuming limiter is already defined somewhere else
+app.post("/registration", Registration);
+app.post("/login", Login); // Assuming limiter is already defined somewhere else
 app.post("/update-card-limit", updatecardlimit);
 app.post("/Insurance", Insurance);
 app.get("/getAllInsuranceData", getAllInsuranceData);
@@ -213,7 +220,7 @@ app.get("/crud/user/:id", async (req, res) => {
     const userId = req.params.id;
     // Fetch user data from API
     const response = await axios.get(
-      `https://smartpaycard.in/getUserDeatilsData/${userId}`
+      `http://localhost:3001/getUserDeatilsData/${userId}`
     );
     // console.log(response.data);
     const user = response.data.userData;

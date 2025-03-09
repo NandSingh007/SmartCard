@@ -160,7 +160,7 @@
                 return;
             }
             try {
-                const response = await fetch('https://smartpaycard.in/update-card-limit', {
+                const response = await fetch('http://localhost:3001/update-card-limit', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ userId, cardamount: newLimit }),

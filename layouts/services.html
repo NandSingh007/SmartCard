@@ -308,7 +308,7 @@
       
           if (!userId) return;
       
-          const response = await fetch(`https://smartpaycard.in/getUserDeatilsData/${userId}`, {
+          const response = await fetch(`http://localhost:3001/getUserDeatilsData/${userId}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

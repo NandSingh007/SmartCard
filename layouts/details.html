@@ -837,142 +837,11 @@ body {
 		  <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
 
       <script>
-//         document.addEventListener('DOMContentLoaded', () => {
-//           const token = localStorage.getItem('token');
-//           if (!token) {
-//             window.location.href = 'https://smartpaycard.in/index.html'; // Redirect to login if token is not found
-//             return;
-//           }
-//           try {
-//             const decodedToken = jwt_decode(token);
-//             const userId = decodedToken.id; // Assuming the userId is stored in the token payload
-//             console.log('Decoded User ID:', userId);
-//           } catch (error) {
-//             console.error('Invalid token:', error);
-//           }
-//         });
-      
-//         // Validate PAN Card number
-//         function validatePANCardNumber(input) {
-//           const panPattern = /^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/;
-//           const isValid = panPattern.test(input.value); // Validate input value
-//           document.getElementById('pancardNumberHelp').style.display = isValid ? 'none' : 'block';
-//           return isValid;
-//         }
-      
-//         // Validate Aadhaar number
-//         function validateAadhaarNumber(input) {
-//           const value = input.value;
-//           const aadhaarHelp = document.getElementById('adharcardNumberHelp');
-      
-//           if (value.length === 0) {
-//             aadhaarHelp.style.display = 'none';
-//           } else if (value.length > 12) {
-//             input.value = value.slice(0, 12); // Ensure only 12 digits are allowed
-//             aadhaarHelp.style.display = 'block'; // Show error if more than 12 digits
-//           } else {
-//             aadhaarHelp.style.display = value.length < 12 ? 'block' : 'none'; // Show error if less than 12 digits
-//           }
-      
-//           return value.length === 12;
-//         }
-      
-//         // Handle form submission, prevent page reload and log data
-//         async function validateForm(event, formId) {
-//           event.preventDefault(); // Prevent the page reload
-      
-//           const form = document.getElementById(formId);
-//           const panCardInput = document.getElementById('pancardNumber');
-//           const aadhaarInput = document.getElementById('adharcardNumber');
-//           const adharcardFront = document.getElementById('adharcardFront');
-//           const adharcardBack = document.getElementById('adharcardBack');
-//           const pancardPhoto = document.getElementById('pancardPhoto');
-//           const fatherName = document.getElementById('fatherName');
-//           const email = document.getElementById('email');
-//           const employType = document.getElementById('employType');
-//           const gender = document.getElementById('gender');
-      
-//           // Validate PAN and Aadhaar numbers
-//           const isPANValid = await validatePANCardNumber(panCardInput);
-//           const isAadhaarValid = await validateAadhaarNumber(aadhaarInput);
-      
-//           if (isPANValid && isAadhaarValid) {
-//             // Decode token and get userId
-//             const token = localStorage.getItem('token');
-//             const decodedToken = jwt_decode(token);
-//             const userId = decodedToken.id;
-// // Create a FormData object to handle file uploads
-// const formData = new FormData();
-// formData.append('userId', userId || '');
-// formData.append('PancardNumber', panCardInput?.value || '');
-// formData.append('AdharcardNumber', aadhaarInput?.value || '');
-// formData.append('FatherName', fatherName?.value || '');
-// formData.append('email', email?.value || '');
-// formData.append('EmployType', employType?.value || '');
-// formData.append('gender', gender?.value || '');
-
-// // Append the image files if they exist
-// if (adharcardFront?.files?.length > 0) {
-//   formData.append('adharFrontPageImg', adharcardFront.files[0]);
-// }
-// if (adharcardBack?.files?.length > 0) {
-//   formData.append('adharBackPageImg', adharcardBack.files[0]);
-// }
-// if (pancardPhoto?.files?.length > 0) {
-//   formData.append('panCardPageImg', pancardPhoto.files[0]);
-// }
-
-// // Show loading overlay
-// document.getElementById('loadingOverlay').style.display = 'flex';
-
-// // Function to set a timeout for the fetch request
-// const fetchWithTimeout = (url, options, timeout = 35000) => {
-//   return Promise.race([
-//     fetch(url, options),
-//     new Promise((_, reject) =>
-//       setTimeout(() => reject(new Error('Request timed out')), timeout)
-//     ),
-//   ]);
-// };
-
-// // Make API call to submit data with timeout handling
-// fetchWithTimeout('https://smartpaycard.in/identity', {
-//   method: 'POST',
-//   body: formData,
-// }, 35000) // Timeout set to 10 seconds
-//   .then((response) => {
-//     if (!response.ok) {
-//       return response.json().then((errorData) => {
-//         throw new Error(errorData.message || 'An error occurred.');
-//       });
-//     }
-//     return response.json();
-//   })
-//   .then((data) => {
-//     console.log('Data submitted successfully:', data);
-//     window.location.href = 'https://smartpaycard.in/firstcard.html';
-//   })
-//   .catch((error) => {
-//     console.error('Error submitting data:', error);
-//     alert(`There was an error submitting your data: ${error.message}`);
-//   })
-//   .finally(() => {
-//     document.getElementById('loadingOverlay').style.display = 'none';
-//   });
-
-//           } else {
-//             alert('Please ensure both PAN and Aadhaar numbers are valid.');
-//           }
-//         }
-      
-//         // Attach the form validation to your form
-//         document.getElementById('documentForm').addEventListener('submit', (event) => validateForm(event, 'documentForm'));
-//     
 
 document.addEventListener('DOMContentLoaded', () => {
   const token = localStorage.getItem('token');
   if (!token) {
-    window.location.href = 'https://smartpaycard.in/index.html';
+    window.location.href = 'http://localhost:3001/index.html';
     return;
   }
 
@@ -1061,7 +930,7 @@ async function validateForm(event, formId) {
       ]);
     };
 
-    const response = await fetchWithTimeout('https://smartpaycard.in/identity', {
+    const response = await fetchWithTimeout('http://localhost:3001/identity', {
       method: 'POST',
       body: formData,
     }, 35000);
@@ -1074,7 +943,7 @@ async function validateForm(event, formId) {
     const data = await response.json();
     // alert("subit")
     console.log('Data submitted successfully:', data);
-    window.location.href = 'https://smartpaycard.in/firstcard.html';
+    window.location.href = 'http://localhost:3001/firstcard.html';
   } catch (error) {
     console.error('Error submitting data:', error);
     alert(`There was an error submitting your data: ${error.message}`);

@@ -198,7 +198,7 @@
     // Fetch API data
     async function fetchData() {
     try {
-        const response = await fetch('https://smartpaycard.in/identityUserData'); // Replace with your API URL
+        const response = await fetch('http://localhost:3001/identityUserData'); // Replace with your API URL
         const data = await response.json();
     
         // Call function to populate the table with data
@@ -309,7 +309,7 @@ function populateTable(userData) {
     confirmDeleteButton.addEventListener('click', async () => {
         if (selectedUserId) {
         try {
-            const response = await fetch(`https://smartpaycard.in/deleteUserData/${selectedUserId}`, {
+            const response = await fetch(`http://localhost:3001/deleteUserData/${selectedUserId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
@@ -348,7 +348,7 @@ async function handleApproveButtonClick(event) {
 // alert(button)
     try {
         // Call the API to update the user's status
-        const response = await fetch('https://smartpaycard.in/Firststatus', {
+        const response = await fetch('http://localhost:3001/Firststatus', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
