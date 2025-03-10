@@ -39,18 +39,18 @@ const IdentityUserSchema = new mongoose.Schema(
       required: true,
       unique: true
     },
-    adharFrontPageImg: {
-      type: String,
-      required: true
-    },
-    adharBackPageImg: {
-      type: String,
-      required: true
-    },
-    panCardPageImg: {
-      type: String,
-      required: true
-    },
+    // adharFrontPageImg: {
+    //   type: String,
+    //   required: true
+    // },
+    // adharBackPageImg: {
+    //   type: String,
+    //   required: true
+    // },
+    // panCardPageImg: {
+    //   type: String,
+    //   required: true
+    // },
     FirstPayStatus: {
       type: Number,
       default: 0

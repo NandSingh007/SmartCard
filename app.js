@@ -120,12 +120,7 @@ const upload = multer({
 // Identity Route
 app.post(
   "/identity",
-  upload.fields([
-    // Multer file handling middleware
-    { name: "adharFrontPageImg", maxCount: 1 },
-    { name: "adharBackPageImg", maxCount: 1 },
-    { name: "panCardPageImg", maxCount: 1 }
-  ]),
+  upload.none(),
   Identity // Your Identity Controller to handle the request and response
 );
 
